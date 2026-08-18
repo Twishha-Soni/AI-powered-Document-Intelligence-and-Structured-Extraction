@@ -20,8 +20,8 @@ st.markdown("---")
 # ---------------- Upload Section ----------------
 
 doc = st.file_uploader(
-    'Upload your document (.pdf, .docx, .txt)',
-    type=['pdf', 'docx', 'txt']
+    'Upload your document (.pdf)',
+    type=['pdf']
 )
 
 if st.button(
@@ -42,11 +42,12 @@ if st.button(
         if resp.ok:
             st.session_state['uploaded_doc'] = True
             st.success('✅ Uploaded on server.')
-            st.download_button(
-                "⬇️ Download Brief PDF",
-                data=resp.content,
-                file_name=f"extracted_text_doc.pdf",
-                mime="application/pdf",
-            )
+            # st.download_button(
+            #     "⬇️ Download",
+            #     data=resp.content,
+            #     file_name=f"extracted_text_doc.pdf",
+            #     mime="application/pdf",
+            # )
+            st.warning(resp.text)
         else:
             st.error('Server down')
