@@ -1,4 +1,6 @@
-import fitz, cv2
+import pymupdf
+import cv2
+import numpy as np
 
 try:
     import pytesseract
@@ -9,7 +11,7 @@ except ImportError:
 
 def extract_pdf_text(file_path: str) -> tuple:
     try:
-        with fitz.open(file_path) as doc:
+        with pymupdf.open(file_path) as doc:
 
             extracted_pages = []
             ocr_pages = []
@@ -49,7 +51,9 @@ def extract_pdf_text(file_path: str) -> tuple:
 # ---- Helper function ----
 def _ocr_page(page, page_num: int) -> str:
     try:
-        image = cv2.imread(page)
+        pix = page.get_pixmap(dpi=300)
+        img_bytes = pix.tobytes("png")
+        image = cv2.imdecode(np.frombuffer(img_bytes, np.uint8), cv2.IMREAD_COLOR)
 
         data = pytesseract.image_to_data(
             image, 
@@ -74,9 +78,10 @@ def _ocr_page(page, page_num: int) -> str:
                 2
             )
 
-            cv2.imwrite(f"/home/twishhasoni/ocr_boxes_{page}.png", image)
+            cv2.imwrite(f"/home/twishhasoni/ocr_boxes_{page_num}.png", image)
 
-            return data['text']
+        return data['text']
+    
     except Exception as e:
         print(f"[pdf_extractor] OCR failed on page {page_num}: {e}")
         return ""
