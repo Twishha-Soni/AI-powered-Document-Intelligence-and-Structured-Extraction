@@ -1,6 +1,6 @@
 from contextlib import asynccontextmanager
 from fastapi import FastAPI # type: ignore
-from app.api.routes import router
+from app.api.router import router
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
