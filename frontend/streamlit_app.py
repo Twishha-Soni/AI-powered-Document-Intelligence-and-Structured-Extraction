@@ -1,5 +1,6 @@
 import streamlit as st
 import requests
+from render_utils import render_extracted_fields
 
 API_URL = 'http://localhost:8000'
 
@@ -18,7 +19,6 @@ st.title('AI-powered Document Intelligence')
 st.markdown("---")
 
 # ---------------- Upload Section ----------------
-
 doc = st.file_uploader(
     'Upload your document (.pdf, .docx)',
     type=['pdf', 'docx']
@@ -39,9 +39,25 @@ if st.button(
             }
         )
 
-        if resp.ok:
-            st.session_state['uploaded_doc'] = True
-            st.success('✅ Uploaded on server.')
-            st.warning(resp.text)
+        if not resp.ok:
+            st.error(f'Server down: {resp.text}')
         else:
-            st.error('Server down')
+            result = resp.json()
+
+            if result.get('error'):
+                st.error(result['error'])
+
+            if result.get('extraction_waring'):
+                st.warning(result['extraction_warning'])
+
+            classification = result.get('classification')
+            if classification:
+                st.info(
+                    f"Detected type: **{classification['doc_type']}"
+                    f"(confidence: {classification['confidence']:.0%})"
+                )
+
+            extracted = result.get('extracted')
+            if extracted:
+                st.markdown("### Extracted Fields")
+                render_extracted_fields(extracted)
