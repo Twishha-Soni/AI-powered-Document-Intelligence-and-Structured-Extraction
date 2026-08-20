@@ -5,7 +5,7 @@ router = APIRouter()
 from fastapi import UploadFile, HTTPException
 import tempfile, os
 
-from app.services.pdf_extractor import extract_text
+from app.services.extract_text import extract_text
 from app.services.llm import extract_fields
 
 @router.post('/uploads')
@@ -21,8 +21,9 @@ async def upload_document(file: UploadFile) -> str:
 
         try:
             text, warning = extract_text(tmp_path)
-            extract = extract_fields(text)
-            return extract['classification'].doc_type
+            # extract = extract_fields(text)
+            # return extract['classification'].doc_type
+            return text
         finally:
             os.unlink(tmp_path)
 
