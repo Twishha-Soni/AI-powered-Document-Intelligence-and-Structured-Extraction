@@ -1,59 +1,8 @@
-import pymupdf, docx
+import pymupdf
 import cv2
 import numpy as np
 
-try:
-    from paddleocr import PaddleOCR
-    ocr = PaddleOCR(enable_mkldnn=False)
-    OCR_AVAILABLE = True
-except ImportError:
-    OCR_AVAILABLE = False
-    
-def extract_text(file_path: str) -> tuple:
-    if file_path.lower().endswith('.pdf'):
-        return extract_pdf_text(file_path)
-    if file_path.lower().endswith('.docx'):
-        return extract_docx_text(file_path)
-
-def extract_docx_text(file_path: str) -> tuple:
-    try:
-        doc = docx.Document(file_path)
-
-        extracted_pages = []
-        ocr_pages = []
-        failed_pages = []
-
-        for page_num in range(len(doc)):
-            page = doc[page_num]
-            text = page.get_text().strip()
-
-            if text:
-                extracted_pages.append(f"[Page {page_num + 1}]\n{text}")
-
-            else:
-                if OCR_AVAILABLE:
-                    ocr_text = _ocr_page(page, page_num + 1)
-                    if ocr_text:
-                        text = " ".join(ocr_text)
-                        extracted_pages.append(f"[Page {page_num + 1} - OCR]\n{text}")
-                        ocr_pages.append(page_num + 1)
-                        print(f"[pdf_extractor] Page {page_num + 1}: OCR extracted {len(ocr_text)} chars)")
-                    else:
-                        failed_pages.append(page_num + 1)
-                        print(f"[pdf_extractor] Page {page_num + 1}: OCR returned no text")
-                else:
-                    failed_pages.append(page_num + 1)
-
-        full_text = "\n\n".join(extracted_pages)
-        warning = _build_warning(ocr_pages, failed_pages, OCR_AVAILABLE)
-
-        return full_text, warning
-
-    except Exception as e:
-        print(f"[pdf_extractor] Error: {e}")
-        return "","PDF could not be read."
-
-def extract_pdf_text(file_path: str) -> tuple:
+def extract_pdf_text(file_path: str, OCR_AVAILABLE: bool, ocr) -> tuple:
     try:
         with pymupdf.open(file_path) as doc:
 
@@ -70,7 +19,7 @@ def extract_pdf_text(file_path: str) -> tuple:
 
                 else:
                     if OCR_AVAILABLE:
-                        ocr_text = _ocr_page(page, page_num + 1)
+                        ocr_text = _ocr_page(page, page_num + 1, ocr)
                         if ocr_text:
                             text = " ".join(ocr_text)
                             extracted_pages.append(f"[Page {page_num + 1} - OCR]\n{text}")
@@ -93,7 +42,7 @@ def extract_pdf_text(file_path: str) -> tuple:
 
 
 # ---- Helper function ----
-def _ocr_page(page, page_num: int) -> str:
+def _ocr_page(page, page_num: int, ocr) -> str:
     try:
         pix = page.get_pixmap(dpi=300)
         img_bytes = pix.tobytes("png")
@@ -127,7 +76,7 @@ def _ocr_page(page, page_num: int) -> str:
 
         # return data['text']
 
-        result = ocr.predict('/home/twishhasoni/Downloads/invoice.png')
+        result = ocr.predict(image)
         text = ''
         for res in result:
             text += f" {res["rec_texts"]}"
