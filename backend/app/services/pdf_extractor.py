@@ -1,13 +1,57 @@
-import pymupdf
+import pymupdf, docx
 import cv2
 import numpy as np
 
 try:
-    import pytesseract
+    from paddleocr import PaddleOCR
+    ocr = PaddleOCR(enable_mkldnn=False)
     OCR_AVAILABLE = True
 except ImportError:
     OCR_AVAILABLE = False
     
+def extract_text(file_path: str) -> tuple:
+    if file_path.lower().endswith('.pdf'):
+        return extract_pdf_text(file_path)
+    if file_path.lower().endswith('.docx'):
+        return extract_docx_text(file_path)
+
+def extract_docx_text(file_path: str) -> tuple:
+    try:
+        doc = docx.Document(file_path)
+
+        extracted_pages = []
+        ocr_pages = []
+        failed_pages = []
+
+        for page_num in range(len(doc)):
+            page = doc[page_num]
+            text = page.get_text().strip()
+
+            if text:
+                extracted_pages.append(f"[Page {page_num + 1}]\n{text}")
+
+            else:
+                if OCR_AVAILABLE:
+                    ocr_text = _ocr_page(page, page_num + 1)
+                    if ocr_text:
+                        text = " ".join(ocr_text)
+                        extracted_pages.append(f"[Page {page_num + 1} - OCR]\n{text}")
+                        ocr_pages.append(page_num + 1)
+                        print(f"[pdf_extractor] Page {page_num + 1}: OCR extracted {len(ocr_text)} chars)")
+                    else:
+                        failed_pages.append(page_num + 1)
+                        print(f"[pdf_extractor] Page {page_num + 1}: OCR returned no text")
+                else:
+                    failed_pages.append(page_num + 1)
+
+        full_text = "\n\n".join(extracted_pages)
+        warning = _build_warning(ocr_pages, failed_pages, OCR_AVAILABLE)
+
+        return full_text, warning
+
+    except Exception as e:
+        print(f"[pdf_extractor] Error: {e}")
+        return "","PDF could not be read."
 
 def extract_pdf_text(file_path: str) -> tuple:
     try:
@@ -55,32 +99,40 @@ def _ocr_page(page, page_num: int) -> str:
         img_bytes = pix.tobytes("png")
         image = cv2.imdecode(np.frombuffer(img_bytes, np.uint8), cv2.IMREAD_COLOR)
 
-        data = pytesseract.image_to_data(
-            image, 
-            output_type=pytesseract.Output.DICT
-        )
+        # data = pytesseract.image_to_data(
+        #     image, 
+        #     config="--psm 3",
+        #     output_type=pytesseract.Output.DICT
+        # )
 
-        for i, text in enumerate(data["text"]):
+        # for i, text in enumerate(data["text"]):
 
-            if not text.strip():
-                continue
+        #     if not text.strip():
+        #         continue
 
-            x = data["left"][i]
-            y = data["top"][i]
-            w = data["width"][i]
-            h = data["height"][i]
+        #     x = data["left"][i]
+        #     y = data["top"][i]
+        #     w = data["width"][i]
+        #     h = data["height"][i]
 
-            cv2.rectangle(
-                image,
-                (x, y),
-                (x + w, y + h),
-                (0, 255, 0),
-                2
-            )
+        #     cv2.rectangle(
+        #         image,
+        #         (x, y),
+        #         (x + w, y + h),
+        #         (0, 255, 0),
+        #         2
+        #     )
 
-            cv2.imwrite(f"/home/twishhasoni/ocr_boxes_{page_num}.png", image)
+        #     cv2.imwrite(f"/home/twishhasoni/ocr_boxes_{page_num}.png", image)
 
-        return data['text']
+        # return data['text']
+
+        result = ocr.predict('/home/twishhasoni/Downloads/invoice.png')
+        text = ''
+        for res in result:
+            text += f" {res["rec_texts"]}"
+
+        return text
     
     except Exception as e:
         print(f"[pdf_extractor] OCR failed on page {page_num}: {e}")
