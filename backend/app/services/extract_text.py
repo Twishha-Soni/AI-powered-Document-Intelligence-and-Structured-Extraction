@@ -6,8 +6,9 @@ except ImportError:
     OCR_AVAILABLE = False
 
 
-from app.services.pdf_extractor import extract_pdf_text
-from app.services.docx_extraction import extract_docx_text
+from app.services.file_types_extraction.pdf_extractor import extract_pdf_text
+from app.services.file_types_extraction.docx_extraction import extract_docx_text
+from app.services.file_types_extraction.image_extraction import extract_image_text
 
 
 
@@ -16,3 +17,5 @@ def extract_text(file_path: str) -> tuple:
         return extract_pdf_text(file_path, OCR_AVAILABLE, ocr)
     if file_path.lower().endswith('.docx'):
         return extract_docx_text(file_path, OCR_AVAILABLE, ocr)
+    if file_path.lower().endswith(('.png', '.jpg', '.jpeg', '.webp')):
+        return extract_image_text(file_path, OCR_AVAILABLE, ocr)
