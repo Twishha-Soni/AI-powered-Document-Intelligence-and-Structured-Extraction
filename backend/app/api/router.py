@@ -15,7 +15,7 @@ class TextRequest(BaseModel):
 
 @router.post('/uploads')
 async def upload_document(file: UploadFile) -> dict:
-    if not file.filename.lower().endswith(('.pdf', '.docx')):
+    if not file.filename.lower().endswith(('.pdf', '.docx', '.png', '.jpg', '.jpeg', '.webp')):
         raise HTTPException(status_code=400, detail='Upload documents with extension .pdf and .docx only')
 
     _, file_extension = os.path.splitext(file.filename)
