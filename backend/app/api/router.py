@@ -4,9 +4,14 @@ router = APIRouter()
 
 from fastapi import UploadFile, HTTPException
 import tempfile, os
+from pydantic import BaseModel
 
 from app.services.extract_text import extract_text
 from app.services.llm import extract_fields
+
+class TextRequest(BaseModel):
+     string1: str
+     string2: str
 
 @router.post('/uploads')
 async def upload_document(file: UploadFile) -> dict:
@@ -34,15 +39,14 @@ async def upload_document(file: UploadFile) -> dict:
             os.unlink(tmp_path)
 
 @router.post("/extract")
-def extract_from_document(text: str) -> dict:
-    if not text:
+def extract_from_document(data: TextRequest) -> dict:
+    if not data.string1:
         raise HTTPException(status_code=422, detail='Could not extract any text from document uploaded.')
     
-    result = extract_fields(text)
+    result = extract_fields(data.string1)
 
     return {
         "classification": result["classification"].model_dump() if "classification" in result else None,
         "extracted": result["extracted"].model_dump() if "extracted" in result else None,
         "error": result.get("error"),
-        "extraction_warning": warning,
     }

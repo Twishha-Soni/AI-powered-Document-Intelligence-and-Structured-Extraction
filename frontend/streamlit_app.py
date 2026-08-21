@@ -25,7 +25,7 @@ doc = st.file_uploader(
 )
 
 if st.button(
-    '📥 Extract',
+    '📥 Upload',
     disabled=doc is None
 ):
     with st.spinner('Uploading doc...'):
@@ -44,20 +44,39 @@ if st.button(
         else:
             result = resp.json()
 
-            if result.get('error'):
-                st.error(result['error'])
+            if result.get('text'):
+                st.success('Uploaded on Server.')
 
-            if result.get('extraction_waring'):
-                st.warning(result['extraction_warning'])
+            if result.get('waring'):
+                st.warning(result['warning'])
 
-            classification = result.get('classification')
-            if classification:
-                st.info(
-                    f"Detected type: **{classification['doc_type']}"
-                    f"(confidence: {classification['confidence']:.0%})"
-                )
+            if st.button(
+                'Extract',
+                disabled=result.get('text') is None
+            ):
+                payload={'string1': result.get('text'), 'string2': result.get('warning')}
 
-            extracted = result.get('extracted')
-            if extracted:
-                st.markdown("### Extracted Fields")
-                render_extracted_fields(extracted)
+                with st.spinner('Extracting fields...'):
+                    resp = requests.post(
+                        f"{API_URL}/extract",
+                        json=payload
+                    )
+
+                    if not resp.ok:
+                        st.error('LLM response error.')
+
+                    else:
+                        if result.get('error'):
+                            st.error(result['error'])
+
+                        classification = result.get('classification')
+                        if classification:
+                            st.info(
+                                f"Detected type: **{classification['doc_type']}"
+                                f"(confidence: {classification['confidence']:.0%})"
+                            )
+
+                        extracted = result.get('extracted')
+                        if extracted:
+                            st.markdown("### Extracted Fields")
+                            render_extracted_fields(extracted)
