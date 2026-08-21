@@ -2,7 +2,7 @@ import streamlit as st
 import requests
 from render_utils import render_extracted_fields
 
-API_URL = 'http://localhost:8000'
+API_URL = 'http://backend:8000'
 
 # ---------------- Page Config ----------------
 st.set_page_config(
@@ -48,6 +48,7 @@ if st.button(
 
             if st.session_state['result'].get('text'):
                 st.success('Uploaded on Server.')
+                st.success(st.session_state['result'].get('text'))
 
             if st.session_state['result'].get('waring'):
                 st.warning(st.session_state['result'].get('warning'))
