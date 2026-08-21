@@ -3,22 +3,22 @@ from dotenv import load_dotenv
 
 from app.prompts.classification_prompt import classification_prompt
 from app.prompts.invoice_prompt import invoice_prompt
-from app.prompts.application_form_prompt import application_form_prompt
-from app.prompts.contract_prompt import contract_prompt
-from app.prompts.resume_prompt import resume_prompt
-from app.prompts.purchase_order_prompt import purchase_order_prompt
+# from app.prompts.application_form_prompt import application_form_prompt
+# from app.prompts.contract_prompt import contract_prompt
+# from app.prompts.resume_prompt import resume_prompt
+# from app.prompts.purchase_order_prompt import purchase_order_prompt
 
 from app.schemas.classification_schema import DocumentTypeClassification
 from app.schemas.invoice_schema import InvoiceFields
-from app.schemas.application_form_schema import ApplicationFormFields
-from app.schemas.contract_schema import ContractFields
-from app.schemas.resume_schema import ResumeFields
-from app.schemas.purchase_order_schema import PurchaseOrderFields
+# from app.schemas.application_form_schema import ApplicationFormFields
+# from app.schemas.contract_schema import ContractFields
+# from app.schemas.resume_schema import ResumeFields
+# from app.schemas.purchase_order_schema import PurchaseOrderFields
 
 load_dotenv()
 
 _llm = ChatOpenRouter(
-    model='gpt-5-nano'
+    model='nvidia/nemotron-3-ultra-550b-a55b:free'
 )
 
 _classification_chain = classification_prompt | _llm.with_structured_output(DocumentTypeClassification)
@@ -26,16 +26,16 @@ _classification_chain = classification_prompt | _llm.with_structured_output(Docu
 
 def _classify_document(doc_text: str) -> DocumentTypeClassification:
     return _classification_chain.invoke(
-        {'document_text': doc_text}
+        {'document_text': doc_text[:100]}
     )
 
 # ---- Dispatch table: doc_type -> (prompt, schema) ----
 _DISPATCH = {
     "invoice": (invoice_prompt, InvoiceFields),
-    "resume": (resume_prompt, ResumeFields),
-    "purchase_order": (purchase_order_prompt, PurchaseOrderFields),
-    "application_form": (application_form_prompt, ApplicationFormFields),
-    "contract": (contract_prompt, ContractFields),
+    # "resume": (resume_prompt, ResumeFields),
+    # "purchase_order": (purchase_order_prompt, PurchaseOrderFields),
+    # "application_form": (application_form_prompt, ApplicationFormFields),
+    # "contract": (contract_prompt, ContractFields),
 }
 
 def extract_fields(doc_text: str) -> dict:
