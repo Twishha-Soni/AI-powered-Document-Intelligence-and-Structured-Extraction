@@ -5,12 +5,14 @@ description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [
+    "bcrypt==4.0.1",
     "fastapi>=0.141.1",
     "langchain-core>=1.5.6",
     "langchain-openrouter>=0.2.8",
     "opencv-python>=5.0.0.93",
     "paddleocr>=3.7.0",
     "paddlepaddle>=3.3.1",
+    "passlib[bcrypt]>=1.7.4",
     "pymupdf>=1.28.2",
     "pytesseract>=0.3.13",
     "python-docx>=1.2.0",

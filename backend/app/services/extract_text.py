@@ -1,6 +1,12 @@
 try:
     from paddleocr import PaddleOCR
-    ocr = PaddleOCR(enable_mkldnn=False)
+    ocr = PaddleOCR(
+        enable_mkldnn=False,
+        use_angle_cls=False,
+        use_doc_orientation_classify=False,
+        use_textline_orientation=False,
+        cpu_threads=2
+    )
     OCR_AVAILABLE = True
 except ImportError:
     OCR_AVAILABLE = False
