@@ -13,10 +13,12 @@ dependencies = [
     "paddleocr>=3.7.0",
     "paddlepaddle>=3.3.1",
     "passlib[bcrypt]>=1.7.4",
+    "psycopg2-binary>=2.9.12",
     "pymupdf>=1.28.2",
     "pytesseract>=0.3.13",
     "python-docx>=1.2.0",
     "python-dotenv>=1.2.3",
     "python-multipart>=0.0.32",
+    "sqlalchemy>=2.0.52",
     "uvicorn>=0.52.4",
 ]
