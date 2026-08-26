@@ -1,0 +1,42 @@
+from fastapi import APIRouter, Depends, HTTPException
+from sqlalchemy.orm import Session
+from pydantic import BaseModel, Field
+from datetime import datetime
+
+from app.database.session import get_db
+from app.database.models import User
+from app.auth.hashing import hash_password
+from app.api.upload import router
+
+router = APIRouter(tags=['register'])
+
+
+class UserCreate(BaseModel):
+    username: str = Field(min_length=3, max_length=50)
+    password: str = Field(min_length=8)
+
+
+class UserOut(BaseModel):
+    id: int
+    username: str
+    created_at: datetime
+
+    model_config = {'from_attributes': True}
+
+@router.post("/register", response_model=UserOut)
+def register(payload: UserCreate, db: Session = Depends(get_db)):
+    existing = db.query(User).filter(User.username == payload.username).first()
+
+    if existing:
+        raise HTTPException(status_code=400, detail='Username already taken.')
+
+    new_user = User(
+        username=payload.username,
+        hashed_password=hash_password(payload.username)
+    )
+
+    db.add(new_user)
+    db.commit()
+    db.refresh(new_user)
+
+    return new_user

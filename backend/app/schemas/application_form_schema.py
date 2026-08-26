@@ -152,7 +152,7 @@ class Reference(BaseModel):
     )
 
 
-class ApplicationFields(ExtractedDocument):
+class ApplicationFormFields(ExtractedDocument):
 
     document_type: Literal["application_form"] = "application_form"
 
