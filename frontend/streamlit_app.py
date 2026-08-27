@@ -72,6 +72,11 @@ def do_register():
     username = st.session_state.reg_username
     password = st.session_state.reg_password
 
+    if len(password) < 8:
+        st.session_state.register_error = "Password must be at least 8 characters."
+        st.session_state.register_success = None
+        return
+
     resp = requests.post(
         f"{API_URL}/register",
         json={"username": username, "password": password}
@@ -155,7 +160,7 @@ def register_page():
     with st.container(border=True):
         st.subheader("Register")
         st.text_input("Username", key="reg_username")
-        st.text_input("Password", type="password", key="reg_password")
+        st.text_input("Password", type="password", key="reg_password", help="Must be at least 8 characters.")
         st.button("Create account", key="reg_submit", on_click=do_register)
 
         if st.session_state.register_error:
