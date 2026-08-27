@@ -210,8 +210,10 @@ def main_page():
 
         if st.session_state.upload_success:
             st.success(st.session_state.upload_success)
+            st.session_state.upload_success = None
         if st.session_state.upload_error:
             st.error(st.session_state.upload_error)
+            st.session_state.upload_error = None
 
         st.button("📤 Upload", key="upload_button", on_click=do_upload)
 
