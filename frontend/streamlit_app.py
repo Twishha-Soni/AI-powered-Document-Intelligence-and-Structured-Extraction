@@ -268,6 +268,12 @@ def render_main_pane():
 
 
     elif doc["status"] == "extracted":
+        st.button(
+            "🔍 Re-Analyze",
+            key="analyze_button",
+            on_click=do_analyze,
+            args=(doc["id"],)
+        )
         st.info(f"Detected type: **{doc['doc_type']}** (confidence: {doc['confidence']*100:.1f}%)")
         st.markdown("### Extracted Fields")
         render_extracted_fields(doc["extracted_data"])
