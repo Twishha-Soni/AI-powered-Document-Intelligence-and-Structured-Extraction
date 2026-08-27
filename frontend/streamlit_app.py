@@ -236,7 +236,6 @@ def main_page():
                     args=(doc['document_id'],)
                 )
 
-
     render_main_pane()
 
 # ---------------- Render main pane ----------------

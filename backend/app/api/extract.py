@@ -25,15 +25,6 @@ def extract_from_document(
     
     if document is None:
         raise HTTPException(status_code=422, detail='Document not found.')
-
-    if document.extracted_data:
-        return {
-            "document_id": document.id,
-            "status": document.status,
-            "doc_type": document.doc_type,
-            "confidence": document.confidence * 100,
-            "extracted": document.extracted_data,
-        }
     
     result = extract_fields(document.extracted_text)
 
