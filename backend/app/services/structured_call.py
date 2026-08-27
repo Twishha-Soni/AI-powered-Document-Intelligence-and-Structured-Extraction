@@ -16,7 +16,7 @@ def call_structured(system_prompt: str, human_prompt: str, schema: type[BaseMode
         {"role": "user", "content": human_prompt},
     ]
 
-    # ---- Attempt 1: native structured output (json_schema, strict) ----
+    # ---- Attempt 1: native structured output ----
     try:
         resp = client.chat.completions.create(
             model=MODEL,
@@ -30,18 +30,17 @@ def call_structured(system_prompt: str, human_prompt: str, schema: type[BaseMode
                 },
             },
         )
-        content = resp.choices[0].message.content
+        content = _extract_content(resp)
         return schema.model_validate_json(content)
 
     except RateLimitError as e:
         _raise_rate_limit(e)
     except (APITimeoutError, APIConnectionError, APIError) as e:
         _raise_llm_unavailable(e)
-    except (ValidationError, json.JSONDecodeError, Exception) as first_error:
-        # Only fall back for validation / parsing problems, not for rate limits
+    except (ValidationError, json.JSONDecodeError, ValueError, TypeError) as first_error:
         logger.warning("Structured output failed, falling back to json_object mode: %s", first_error)
 
-    # ---- Attempt 2: fallback — plain JSON mode + explicit instruction ----
+    # ---- Attempt 2: plain JSON mode ----
     fallback_messages = messages + [
         {
             "role": "system",
@@ -59,7 +58,7 @@ def call_structured(system_prompt: str, human_prompt: str, schema: type[BaseMode
             messages=fallback_messages,
             response_format={"type": "json_object"},
         )
-        content = resp.choices[0].message.content
+        content = _extract_content(resp)
         content = _strip_code_fences(content)
         return schema.model_validate_json(content)
 
@@ -67,15 +66,37 @@ def call_structured(system_prompt: str, human_prompt: str, schema: type[BaseMode
         _raise_rate_limit(e)
     except (APITimeoutError, APIConnectionError, APIError) as e:
         _raise_llm_unavailable(e)
-    except (ValidationError, json.JSONDecodeError) as e:
+    except (ValidationError, json.JSONDecodeError, ValueError, TypeError) as e:
         logger.error("Fallback JSON validation also failed: %s", e)
         raise HTTPException(
             status_code=502,
             detail={
                 "error": "llm_parse_error",
-                "message": "AI returned invalid structured data. Please try again.",
+                "message": "AI returned invalid or empty structured data. Please try again.",
             },
         ) from e
+
+
+def _extract_content(resp) -> str:
+    """Safely pull the message content. Raises ValueError if the response is empty/malformed."""
+    if resp is None:
+        raise ValueError("LLM returned None response")
+
+    choices = getattr(resp, "choices", None)
+    if not choices:
+        # Log the whole response so you can see what OpenRouter actually sent
+        logger.error("LLM response has no choices. Full response: %s", resp)
+        raise ValueError("LLM response contains no choices (model may not support this response_format)")
+
+    message = getattr(choices[0], "message", None)
+    if message is None:
+        raise ValueError("LLM choice has no message")
+
+    content = getattr(message, "content", None)
+    if not content:
+        raise ValueError("LLM message content is empty")
+
+    return content
 
 
 def _raise_rate_limit(exc: Exception) -> None:
@@ -85,7 +106,7 @@ def _raise_rate_limit(exc: Exception) -> None:
         detail={
             "error": "rate_limit",
             "message": "The AI provider is temporarily rate-limited. Please try again in a few seconds.",
-            "retry_after": 10,  # optional hint for frontend
+            "retry_after": 10,
         },
     ) from exc
 
@@ -98,7 +119,7 @@ def _raise_llm_unavailable(exc: Exception) -> None:
             "error": "llm_unavailable",
             "message": "AI service is temporarily unavailable. Please try again shortly.",
         },
-    ) from exc
+    ) from exp
 
 
 def _strip_code_fences(text: str) -> str:
