@@ -23,7 +23,9 @@ def call_structured(system_prompt: str, human_prompt: str, schema: type[BaseMode
                 },
             },
         )
-        content = resp.choices[0].message.content
+        if resp:
+            content = resp.choices[0].message.content
+
         return schema.model_validate_json(content)
 
     except (ValidationError, json.JSONDecodeError, Exception) as first_error:
@@ -43,9 +45,12 @@ def call_structured(system_prompt: str, human_prompt: str, schema: type[BaseMode
             messages=fallback_messages,
             response_format={"type": "json_object"},
         )
-        content = resp.choices[0].message.content
-        content = _strip_code_fences(content)
-        return schema.model_validate_json(content)
+        if resp:
+            content = resp.choices[0].message.content
+            content = _strip_code_fences(content)
+            return schema.model_validate_json(content)
+
+        return fallback_messages
 
 
 def _strip_code_fences(text: str) -> str:

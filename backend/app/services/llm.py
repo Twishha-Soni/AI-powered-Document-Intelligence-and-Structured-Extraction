@@ -30,7 +30,6 @@ _DISPATCH = {
 
 
 def _render(prompt_template, **kwargs) -> tuple[str, str]:
-    """Format a ChatPromptTemplate and split it into (system, human) strings."""
     messages = prompt_template.format_messages(**kwargs)
     system_text = next(m.content for m in messages if m.type == "system")
     human_text = next(m.content for m in messages if m.type == "human")

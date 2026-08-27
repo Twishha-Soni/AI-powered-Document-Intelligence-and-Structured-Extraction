@@ -7,4 +7,4 @@ client = OpenAI(
     api_key=os.environ["OPENROUTER_API_KEY"],
 )
 
-MODEL = "nvidia/nemotron-3-ultra-550b-a55b:free"
+MODEL = "qwen/qwen3.8-flash"
