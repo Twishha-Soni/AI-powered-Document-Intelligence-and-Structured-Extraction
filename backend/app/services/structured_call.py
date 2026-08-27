@@ -6,7 +6,7 @@ from app.services.llm_client import client, MODEL
 def call_structured(system_prompt: str, human_prompt: str, schema: type[BaseModel]) -> BaseModel:
     messages = [
         {"role": "system", "content": system_prompt},
-        {"role": "human" if False else "user", "content": human_prompt},
+        {"role": "user", "content": human_prompt},
     ]
 
     # ---- Attempt 1: native structured output (json_schema, strict) ----

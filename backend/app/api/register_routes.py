@@ -32,7 +32,7 @@ def register(payload: UserCreate, db: Session = Depends(get_db)):
 
     new_user = User(
         username=payload.username,
-        hashed_password=hash_password(payload.username)
+        hashed_password=hash_password(payload.password)
     )
 
     db.add(new_user)

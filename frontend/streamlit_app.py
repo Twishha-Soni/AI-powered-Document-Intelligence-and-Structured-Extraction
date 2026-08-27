@@ -13,7 +13,7 @@ st.set_page_config(
 
 # ---------------- Session State Init ----------------
 if 'page' not in st.session_state:
-    st.session_state.page = 'login'      # which auth screen to show
+    st.session_state.page = 'register'      # which auth screen to show
 if 'token' not in st.session_state:
     st.session_state.token = None        # None = not logged in
 if 'username' not in st.session_state:
@@ -71,9 +71,14 @@ def do_login():
 def do_register():
     username = st.session_state.reg_username
     password = st.session_state.reg_password
+    
+    if len(username) < 3:
+        st.session_state.register_error = 'Username must be at least 3 characters long.'
+        st.session_state.register_success = None
+        return
 
     if len(password) < 8:
-        st.session_state.register_error = "Password must be at least 8 characters."
+        st.session_state.register_error = "Password must be at least 8 characters long."
         st.session_state.register_success = None
         return
 
@@ -184,6 +189,7 @@ def login_page():
 
         if st.session_state.login_error:
             st.error(st.session_state.login_error)
+            st.session_state.login_error = None
 
     st.markdown("Not a user?")
     st.button("Register", key="to_register", on_click=go_to, args=("register",))
