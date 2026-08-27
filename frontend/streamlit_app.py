@@ -3,7 +3,7 @@ import requests
 
 from render_utils import render_extracted_fields
 
-API_URL = 'http://backend:8000'
+API_URL = 'http://localhost:8000'
 
 st.set_page_config(
     page_title="AI-Powered DocIQ",
