@@ -263,7 +263,9 @@ def render_main_pane():
             args=(doc["id"],)
         )
         if st.session_state.analyze_error:
-            st.error(st.session_state.analyze_error)
+            st.error('LLM is currently facing high traffic. Try again later.')
+            st.session_state.analyze_error = None
+            return
 
 
     elif doc["status"] == "extracted":
@@ -273,6 +275,10 @@ def render_main_pane():
             on_click=do_analyze,
             args=(doc["id"],)
         )
+        if st.session_state.analyze_error:
+            st.error('LLM is currently facing high traffic. Try again later.')
+            st.session_state.analyze_error = None
+
         st.info(f"Detected type: **{doc['doc_type']}** (confidence: {doc['confidence']*100:.1f}%)")
         st.markdown("### Extracted Fields")
         render_extracted_fields(doc["extracted_data"])
