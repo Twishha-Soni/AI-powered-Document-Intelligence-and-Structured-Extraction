@@ -7,4 +7,4 @@ client = OpenAI(
     api_key=os.environ["OPENROUTER_API_KEY"],
 )
 
-MODEL = "qwen/qwen3.8-flash:nitro"
+MODEL = "qwen/qwen3.8-flash"
