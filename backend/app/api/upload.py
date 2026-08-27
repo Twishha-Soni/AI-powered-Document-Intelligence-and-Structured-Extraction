@@ -19,7 +19,7 @@ async def upload_document(
 ) -> dict:
     
     if not file.filename.lower().endswith(('.pdf', '.docx', '.png', '.jpg', '.jpeg', '.webp')):
-        raise HTTPException(status_code=400, detail='Upload documents with extension .pdf and .docx only')
+        raise HTTPException(status_code=400, detail='Upload documents with extension .pdf, .docx, .png, .jpeg, .jpg and .webp only')
 
     _, file_extension = os.path.splitext(file.filename)
 
