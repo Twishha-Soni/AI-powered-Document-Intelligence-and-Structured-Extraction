@@ -1,4 +1,4 @@
-# backend/app/services/llm.py
+from langchain_openrouter import ChatOpenRouter
 from dotenv import load_dotenv
 
 from app.prompts.classification_prompt import classification_prompt
@@ -15,11 +15,20 @@ from app.schemas.contract_schema import ContractFields
 from app.schemas.resume_schema import ResumeFields
 from app.schemas.purchase_order_schema import PurchaseOrderFields
 
-from app.services.structured_call import call_structured
-
 load_dotenv()
 
-# ---- Dispatch table: doc_type -> (prompt_template, schema) ----
+_llm = ChatOpenRouter(
+    model='nvidia/nemotron-3-ultra-550b-a55b:free'
+)
+
+_classification_chain = classification_prompt | _llm.with_structured_output(DocumentTypeClassification)
+
+def _classify_document(doc_text: str) -> DocumentTypeClassification:
+    return _classification_chain.invoke(
+        {'document_text': doc_text[:100]}
+    )
+
+# ---- Dispatch table: doc_type -> (prompt, schema) ----
 _DISPATCH = {
     "invoice": (invoice_prompt, InvoiceFields),
     "resume": (resume_prompt, ResumeFields),
@@ -27,20 +36,6 @@ _DISPATCH = {
     "application_form": (application_form_prompt, ApplicationFormFields),
     "contract": (contract_prompt, ContractFields),
 }
-
-
-def _render(prompt_template, **kwargs) -> tuple[str, str]:
-    """Format a ChatPromptTemplate and split it into (system, human) strings."""
-    messages = prompt_template.format_messages(**kwargs)
-    system_text = next(m.content for m in messages if m.type == "system")
-    human_text = next(m.content for m in messages if m.type == "human")
-    return system_text, human_text
-
-
-def _classify_document(doc_text: str) -> DocumentTypeClassification:
-    system_text, human_text = _render(classification_prompt, document_text=doc_text[:100])
-    return call_structured(system_text, human_text, DocumentTypeClassification)
-
 
 def extract_fields(doc_text: str) -> dict:
     classification = _classify_document(doc_text)
@@ -52,11 +47,11 @@ def extract_fields(doc_text: str) -> dict:
             "classification": classification,
         }
 
-    prompt_template, schema = entry
-    system_text, human_text = _render(prompt_template, document_text=doc_text)
-    extracted = call_structured(system_text, human_text, schema)
+    prompt, schema = entry
+    extraction_chain = prompt | _llm.with_structured_output(schema)
+    extracted = extraction_chain.invoke({'document_text': doc_text})
 
     return {
-        "classification": classification,
-        "extracted": extracted,
+        'classification': classification,
+        'extracted': extracted
     }
