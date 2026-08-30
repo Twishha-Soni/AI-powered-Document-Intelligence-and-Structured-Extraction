@@ -1,4 +1,81 @@
 <img width="1328" height="322" alt="textstuct (1)" src="https://github.com/user-attachments/assets/1ec53b16-7169-46a6-8395-f7d111615cc9" />
+<img width="1600" height="900" alt="TextStruct" src="https://github.com/user-attachments/assets/1536e381-c0bf-45cd-be0d-358652b554a4" /><svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+  <defs>
+    <linearGradient id="blueGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#eaf8ff"/>
+      <stop offset="42%" stop-color="#8ed8ff"/>
+      <stop offset="100%" stop-color="#168fe0"/>
+    </linearGradient>
+    <linearGradient id="whiteGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#dce4ea"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="150%" height="160%">
+      <feDropShadow dx="10" dy="12" stdDeviation="2" flood-color="#05080d" flood-opacity="0.95"/>
+    </filter>
+    <style>
+      .pixel {
+        font-family: "DejaVu Sans Mono", "Courier New", monospace;
+        font-weight: 900;
+        letter-spacing: -9px;
+      }
+      .sub {
+        font-family: "DejaVu Sans Mono", "Courier New", monospace;
+        font-weight: 800;
+        letter-spacing: 1px;
+      }
+    </style>
+  </defs>
+
+  <!-- GitHub-like dark README background -->
+  <rect width="1600" height="900" fill="#0d1117"/>
+
+  <!-- Subtle pixel/grid accents -->
+  <g opacity="0.18" fill="#168fe0">
+    <rect x="110" y="405" width="8" height="8"/>
+    <rect x="128" y="405" width="8" height="8"/>
+    <rect x="146" y="405" width="8" height="8"/>
+    <rect x="1445" y="475" width="8" height="8"/>
+    <rect x="1463" y="475" width="8" height="8"/>
+    <rect x="1481" y="475" width="8" height="8"/>
+  </g>
+
+  <!-- Pixel-style offset shadow -->
+  <text x="800" y="520" text-anchor="middle"
+        class="pixel" font-size="205"
+        fill="#071018" stroke="#071018" stroke-width="22"
+        transform="translate(12,16)" filter="url(#shadow)">TextStruct</text>
+
+  <!-- Main title -->
+  <text x="800" y="520" text-anchor="middle"
+        class="pixel" font-size="205"
+        fill="url(#whiteGrad)" stroke="#111820" stroke-width="10"
+        paint-order="stroke">Text</text>
+
+  <text x="800" y="520" text-anchor="middle"
+        class="pixel" font-size="205"
+        fill="url(#blueGrad)" stroke="#111820" stroke-width="10"
+        paint-order="stroke">Struct</text>
+
+  <!-- Strong pixel-like blue underline -->
+  <g fill="#5bc0ff">
+    <rect x="410" y="575" width="75" height="10"/>
+    <rect x="1115" y="575" width="75" height="10"/>
+  </g>
+
+  <!-- Subtitle -->
+  <text x="800" y="600" text-anchor="middle"
+        class="sub" font-size="58"
+        fill="#f4f7fa" stroke="#101820" stroke-width="3"
+        paint-order="stroke">Text to Structure</text>
+
+  <!-- Tiny blue pixel accents -->
+  <g fill="#168fe0">
+    <rect x="390" y="575" width="12" height="10"/>
+    <rect x="1200" y="575" width="12" height="10"/>
+  </g>
+</svg>
+
 
 <img width="1328" height="322" alt="textstuct (1)" src="https://github.com/user-attachments/assets/aec992ab-38ff-4dcb-849e-561b0c0339fb" /><?xml version="1.0" encoding="UTF-8"?>
 <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="1328" height="322">
