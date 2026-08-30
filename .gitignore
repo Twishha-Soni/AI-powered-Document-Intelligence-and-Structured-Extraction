@@ -11,3 +11,6 @@ wheels/
 
 # api keys
 .env
+
+/Project\ Scope.pdf
+/Project_logs.pdf
