@@ -159,6 +159,7 @@ def do_analyze(document_id: int):
         st.session_state.analyze_error = None
     else:
         st.session_state.analyze_error = resp.json().get("detail", "Extraction failed.")
+        
 
 # ---------------- Register Page ----------------
 def register_page():
@@ -264,8 +265,9 @@ def render_main_pane():
             on_click=do_analyze,
             args=(doc["id"],)
         )
+
         if st.session_state.analyze_error:
-            st.error('LLM is currently facing high traffic. Try again later.')
+            st.error(st.session_state.analyze_error)
             st.session_state.analyze_error = None
             return
 
@@ -278,7 +280,7 @@ def render_main_pane():
             args=(doc["id"],)
         )
         if st.session_state.analyze_error:
-            st.error('LLM is currently facing high traffic. Try again later.')
+            st.error(st.session_state.analyze_error)
             st.session_state.analyze_error = None
 
         st.info(f"Detected type: **{doc['doc_type']}** (confidence: {doc['confidence']*100:.1f}%)")

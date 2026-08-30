@@ -49,13 +49,13 @@ def _classify_document(doc_text: str) -> DocumentTypeClassification:
     )
 
 def extract_fields(doc_text: str) -> dict:
-    if not doc_text or not doc_text.strip():
+    if not doc_text or not doc_text.strip() or doc_text.strip() == "[]":
         return {
             "error": "Empty document text provided.",
             "classification": None,
             "extracted": None,
         }
-
+    
     # 1. Classification
     try:
         classification = _classify_document(doc_text)
@@ -63,8 +63,9 @@ def extract_fields(doc_text: str) -> dict:
     except Exception as e:
         logger.error(f"Classification failed: {e}", exc_info=True)
         return {
-            "error": "Failed to classify document",
-            "details": str(e),
+            "error": 'LLM is currently facing high traffic. Try again later.',
+            "details": "Failed to classify document",
+            'detailed_error': str(e),
             "classification": None,
             "extracted": None,
         }
@@ -74,7 +75,7 @@ def extract_fields(doc_text: str) -> dict:
     if entry is None:
         logger.warning(f"No schema registered for doc_type='{classification.doc_type}'")
         return {
-            "error": f"No extraction schema registered for document type '{classification.doc_type}'.",
+            "error": f"No extraction schema registered for above document type.",
             "classification": classification,
             "extracted": None,
         }
@@ -89,8 +90,9 @@ def extract_fields(doc_text: str) -> dict:
     except Exception as e:
         logger.error(f"Extraction failed for {classification.doc_type}: {e}", exc_info=True)
         return {
-            "error": f"Failed to extract fields for document type '{classification.doc_type}'",
-            "details": str(e),
+            "error": 'LLM is currently facing high traffic. Try again later.',
+            "details": f"Failed to extract fields for document type '{classification.doc_type}'",
+            'detailed_error': str(e),
             "classification": classification,
             "extracted": None,
         }

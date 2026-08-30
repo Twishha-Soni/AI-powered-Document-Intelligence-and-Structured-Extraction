@@ -31,7 +31,7 @@ async def upload_document(
             text, warning = extract_text(tmp_path)
 
             if not text:
-                    raise HTTPException(status_code=422, detail=warning or 'Could not extract any text from document uploaded.')
+                raise HTTPException(status_code=422, detail=warning or 'Could not extract any text from document uploaded.')
 
             document = Document(
                  user_id=current_user.id,
