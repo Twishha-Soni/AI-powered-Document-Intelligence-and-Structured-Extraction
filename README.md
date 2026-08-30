@@ -1,3 +1,5 @@
+<img width="1328" height="322" alt="textstuct (1)" src="https://github.com/user-attachments/assets/1ec53b16-7169-46a6-8395-f7d111615cc9" />
+
 # TextStruct — Text to Structure
 
 An AI-powered document processing system that ingests unstructured documents (PDFs, DOCX, images), extracts their text (with OCR fallback for scanned/image content), classifies the document type using an LLM, and extracts structured, schema-validated fields specific to that document type — invoices, resumes, purchase orders, application forms, and contracts.
