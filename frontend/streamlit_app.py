@@ -177,6 +177,14 @@ def do_delete(document_id: int):
     else:
         st.session_state.delete_error = resp.json().get('details', 'Failed to delete.')
 
+# ---------------- logout callback ----------------
+def do_logout():
+    st.session_state.page = 'login'
+    st.session_state.token = None
+    st.session_state.username = ''
+    st.session_state.uploader_version = 0
+    st.session_state.selected_doc_id = None
+
 # ---------------- Register Page ----------------
 def register_page():
     with st.container(border=True):
@@ -216,6 +224,7 @@ def login_page():
 def main_page():
     with st.sidebar:
         st.text_input("Username", value=st.session_state.get('username', ''), disabled=True)
+        st.button("⏻ Logout", key="logout_button", on_click=do_logout)
         st.markdown("---")
 
         uploader_key = f"file_uploader_{st.session_state.uploader_version}"
@@ -323,7 +332,7 @@ def render_main_pane():
                 on_click=do_delete,
                 args=(doc["id"],)
             )
-            
+
         if st.session_state.analyze_error:
             st.error(st.session_state.analyze_error)
             st.session_state.analyze_error = None
