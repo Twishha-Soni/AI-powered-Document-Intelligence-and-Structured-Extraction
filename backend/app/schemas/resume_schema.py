@@ -69,7 +69,7 @@ class ResumeFields(ExtractedDocument):
 
     work_experience: list[WorkExperience] = Field(default_factory=list, description="Work history, ideally in the order listed on the resume (usually reverse-chronological).")
     education: list[Education] = Field(default_factory=list, description="Educational background.")
-    skills: list[str] = Field(default_factory=list, description="Flat list of skills as listed on the resume (technical and non-technical), kept ungrouped since resumes group skills inconsistently.")
+    skills: list[dict] = Field(default_factory=list, description="skills as listed on the resume (technical and non-technical), keep grouped even if not grouped on resume, for better representation rather than mixed.")
     projects: list[Project] = Field(default_factory=list, description="Personal/academic/professional projects listed separately from work experience.")
     certifications: list[Certification] = Field(default_factory=list, description="Certifications and licenses.")
     languages: list[Language] = Field(default_factory=list, description="Spoken/written languages, if listed.")
