@@ -1,5 +1,6 @@
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, model_validator
 from typing import Literal
+import re
 
 from app.schemas.base_schema import ExtractedDocument
 
@@ -285,3 +286,61 @@ class PurchaseOrderFields(ExtractedDocument):
         default=None,
         description="Special instructions to the supplier regarding delivery, packaging, quality, or fulfillment."
     )
+
+    # ====================== BUSINESS RULES ======================
+    @model_validator(mode="after")
+    def business_rules(self):
+        errors = []
+
+        # 1. Must have PO number
+        if not self.purchase_order_number or not self.purchase_order_number.strip():
+            errors.append("Purchase Order number is missing")
+
+        # 2. Must have PO date
+        if not self.purchase_order_date or not self.purchase_order_date.strip():
+            errors.append("Purchase Order date is missing")
+
+        # 3. Supplier name is required
+        if not self.supplier_info.name or not self.supplier_info.name.strip():
+            errors.append("Supplier name is missing")
+
+        # 4. Buyer name is required
+        if not self.buyer_info.name or not self.buyer_info.name.strip():
+            errors.append("Buyer name is missing")
+
+        # 5. Must have at least one line item
+        if not self.line_items:
+            errors.append("Purchase Order must contain at least one line item")
+
+        # 6. Line item checks
+        for i, item in enumerate(self.line_items, 1):
+            if not item.description or not item.description.strip():
+                errors.append(f"Line item #{i}: description is missing")
+            if item.quantity <= 0:
+                errors.append(f"Line item #{i}: quantity must be greater than 0")
+            if item.unit_price < 0:
+                errors.append(f"Line item #{i}: unit price cannot be negative")
+
+        # 7. Total amount cannot be negative
+        if self.total_amount < 0:
+            errors.append("Total amount cannot be negative")
+
+        # 8. Basic GSTIN format check (optional but useful for Indian POs)
+        def is_valid_gstin(gstin: str | None) -> bool:
+            if not gstin:
+                return True
+            return bool(re.match(
+                r"^\d{2}[A-Z]{5}\d{4}[A-Z]{1}[A-Z\d]{1}[Z]{1}[A-Z\d]{1}$",
+                gstin.upper()
+            ))
+
+        if self.supplier_info.gst_registration_number and not is_valid_gstin(self.supplier_info.gst_registration_number):
+            errors.append(f"Supplier GSTIN looks invalid: {self.supplier_info.gst_registration_number}")
+
+        if self.buyer_info.gst_registration_number and not is_valid_gstin(self.buyer_info.gst_registration_number):
+            errors.append(f"Buyer GSTIN looks invalid: {self.buyer_info.gst_registration_number}")
+
+        if errors:
+            raise ValueError(" | ".join(errors))
+
+        return self
