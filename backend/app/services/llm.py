@@ -1,7 +1,9 @@
 import os
 import logging
 from langchain.chat_models import init_chat_model
+from langchain_core.exceptions import OutputParserException
 from dotenv import load_dotenv
+from pydantic import ValidationError
 
 from app.prompts.classification_prompt import classification_prompt
 from app.prompts.invoice_prompt import invoice_prompt
@@ -86,7 +88,28 @@ def extract_fields(doc_text: str) -> dict:
     try:
         extraction_chain = prompt | _llm.with_structured_output(schema)
         extracted = extraction_chain.invoke({"document_text": doc_text})
-        logger.info("Fields extracted successfully.")
+        logger.info("Fields extracted successfully and validated successfully.")
+    except OutputParserException as e:
+        logger.error(f'Validation Failed for {classification.doc_type}: {e}', exc_info=True)
+    
+        if isinstance(e.__cause__, ValidationError):
+            pydantic_err = e.__cause__
+            custom_errors = []
+            
+            # 2. Loop through all errors caught by Pydantic
+            for error in pydantic_err.errors():
+                # Pydantic populates 'ctx' when a custom ValueError is raised
+                if "ctx" in error and "error" in error["ctx"]:
+                    underlying_error = error["ctx"]["error"]
+                    if isinstance(underlying_error, ValueError):
+                        custom_errors.append(str(underlying_error))
+
+        return {
+            "error": f"Validation failed: \n\n{"\n".join(custom_errors)}",
+            "details": str(e),
+            "classification": classification,
+            "extracted": None,
+        }
     except Exception as e:
         logger.error(f"Extraction failed for {classification.doc_type}: {e}", exc_info=True)
         return {

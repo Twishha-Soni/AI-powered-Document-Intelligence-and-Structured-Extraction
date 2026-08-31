@@ -1,5 +1,6 @@
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, model_validator
 from typing import Literal
+import re
 
 from app.schemas.base_schema import ExtractedDocument
 
@@ -74,3 +75,56 @@ class ResumeFields(ExtractedDocument):
     languages: list[Language] = Field(default_factory=list, description="Spoken/written languages, if listed.")
 
     total_years_experience: float | None = Field(default=None, description="Total years of experience, only if explicitly stated on the resume (e.g. in a summary line) — not calculated from work history dates.")
+
+    # ====================== BUSINESS RULES ======================
+    @model_validator(mode="after")
+    def business_rules(self):
+        errors = []
+
+        # 1. Name must exist and be reasonable
+        if not self.full_name or len(self.full_name.strip()) < 2:
+            errors.append("Full name is missing or too short")
+
+        # 2. At least one contact method
+        contact = self.contact_info
+        has_contact = any([
+            contact.email,
+            contact.phone,
+            contact.linkedin_url,
+            contact.github_url,
+            contact.portfolio_url,
+        ])
+        if not has_contact:
+            errors.append("At least one contact method (email, phone, LinkedIn, GitHub, or portfolio) is required")
+
+        # 3. Basic email sanity check
+        if contact.email and "@" not in contact.email:
+            errors.append(f"Email looks invalid: {contact.email}")
+
+        # 4. Basic phone sanity check (must contain several digits)
+        # if contact.phone and not re.search(r"\d{7,}", contact.phone):
+        #     errors.append(f"Phone number looks invalid: {contact.phone}")
+
+        # 5. Work experience must have title + company
+        for i, exp in enumerate(self.work_experience, 1):
+            if not exp.job_title.strip():
+                errors.append(f"Work experience #{i}: job title is missing")
+            if not exp.company_name.strip():
+                errors.append(f"Work experience #{i}: company name is missing")
+
+        # 6. Education must have institution
+        for i, edu in enumerate(self.education, 1):
+            if not edu.institution_name.strip():
+                errors.append(f"Education #{i}: institution name is missing")
+
+        # 7. Resume should not be completely empty
+        if (not self.work_experience 
+            and not self.education 
+            and not self.skills 
+            and not self.projects):
+            errors.append("Resume appears empty (no experience, education, skills or projects)")
+
+        if errors:
+            raise ValueError(" \n ".join(errors))
+
+        return self

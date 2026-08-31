@@ -1,5 +1,6 @@
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, model_validator
 from typing import Literal
+import re
 
 from app.schemas.base_schema import ExtractedDocument
 
@@ -104,3 +105,64 @@ class InvoiceFields(ExtractedDocument):
     balance_due: float | None = Field(default=None, ge=0, description="Remaining balance due, if present (may differ from total_amount if partially paid).")
 
     currency: str = Field(default="USD", description="ISO currency code, e.g. USD, INR, EUR.")
+
+    # ====================== BUSINESS RULES ======================
+    @model_validator(mode="after")
+    def business_rules(self):
+        errors = []
+
+        # 1. Must have invoice number
+        if not self.invoice_number or not self.invoice_number.strip():
+            errors.append("Invoice number is missing")
+
+        # 2. Must have issue date
+        if not self.issue_date or not self.issue_date.strip():
+            errors.append("Issue date is missing")
+
+        # 3. Vendor (business) name is required
+        if not self.business_info.name or not self.business_info.name.strip():
+            errors.append("Vendor / Business name is missing")
+
+        # 4. Client name is required
+        if not self.client_info.name or not self.client_info.name.strip():
+            errors.append("Client / Customer name is missing")
+
+        # 5. Must have at least one line item (already enforced by min_length=1, but extra safety)
+        if not self.line_items:
+            errors.append("Invoice must contain at least one line item")
+
+        # 6. Line item basic checks
+        for i, item in enumerate(self.line_items, 1):
+            if not item.description or not item.description.strip():
+                errors.append(f"Line item #{i}: description is missing")
+            if item.quantity <= 0:
+                errors.append(f"Line item #{i}: quantity must be greater than 0")
+            if item.unit_price < 0:
+                errors.append(f"Line item #{i}: unit price cannot be negative")
+
+        # 7. Total amount should not be negative
+        if self.total_amount < 0:
+            errors.append("Total amount cannot be negative")
+
+        # 8. Basic GSTIN format check (Indian invoices) - soft check
+        def is_valid_gstin(gstin: str | None) -> bool:
+            if not gstin:
+                return True
+            # Very basic: 15 characters, starts with 2 digits
+            return bool(re.match(r"^\d{2}[A-Z]{5}\d{4}[A-Z]{1}[A-Z\d]{1}[Z]{1}[A-Z\d]{1}$", gstin.upper()))
+
+        if self.business_info.gst_registration_number and not is_valid_gstin(self.business_info.gst_registration_number):
+            errors.append(f"Business GSTIN looks invalid: {self.business_info.gst_registration_number}")
+
+        if self.client_info.gst_registration_number and not is_valid_gstin(self.client_info.gst_registration_number):
+            errors.append(f"Client GSTIN looks invalid: {self.client_info.gst_registration_number}")
+
+        # 9. Optional: Rough total consistency check (can be made soft later)
+        # calculated = self.sub_total - self.discount_amount + self.shipping_amount + self.tax_amount
+        # if abs(calculated - self.total_amount) > 1.0:  # allow small rounding difference
+        #     errors.append(f"Total amount mismatch. Expected ~{calculated:.2f}, got {self.total_amount}")
+
+        if errors:
+            raise ValueError(" | ".join(errors))
+
+        return self
