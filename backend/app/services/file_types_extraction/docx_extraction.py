@@ -23,6 +23,8 @@ def extract_docx_text(file_path: str, OCR_AVAILABLE: bool, ocr) -> tuple:
 
                 if text:
                     extracted_chunks.append(f"[Paragraph {para_num}]\n{text}")
+                    for link in block.hyperlinks:
+                        extracted_chunks.append(f"Text: '{link.text}'  →  URL: {link.address}  (or .url)")
 
                 image_blobs = _get_paragraph_images(block, doc)
 

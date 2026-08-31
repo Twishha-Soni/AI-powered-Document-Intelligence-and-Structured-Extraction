@@ -13,9 +13,12 @@ def extract_pdf_text(file_path: str, OCR_AVAILABLE: bool, ocr) -> tuple:
             for page_num in range(len(doc)):
                 page = doc[page_num]
                 text = page.get_text().strip()
+                links = page.get_links()         
 
                 if text:
                     extracted_pages.append(f"[Page {page_num + 1}]\n{text}")
+                    for link in links:
+                        extracted_pages.append(f"Page {page_num + 1}: {link}")
 
                 else:
                     if OCR_AVAILABLE:
