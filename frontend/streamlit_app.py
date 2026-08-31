@@ -38,6 +38,10 @@ if 'detail_error' not in st.session_state:
     st.session_state.detail_error = None
 if 'analyze_error' not in st.session_state:
     st.session_state.analyze_error = None
+if 'delete_error' not in st.session_state:
+    st.session_state.delete_error = None
+if 'delete_success' not in st.session_state:
+    st.session_state.delete_success = None
 
 # ---------------- Auth Header ----------------
 def auth_headers() -> dict:
@@ -159,7 +163,19 @@ def do_analyze(document_id: int):
         st.session_state.analyze_error = None
     else:
         st.session_state.analyze_error = resp.json().get("detail", "Extraction failed.")
-        
+
+# ---------------- delete callback ----------------
+def do_delete(document_id: int):
+    resp = requests.delete(
+        f"{API_URL}/document/{document_id}",
+        headers=auth_headers()
+    )
+
+    if resp.ok:
+        st.session_state.selected_doc_id = None
+        st.session_state.delete_success = 'Your document is deleted successfully.'
+    else:
+        st.session_state.delete_error = resp.json().get('details', 'Failed to delete.')
 
 # ---------------- Register Page ----------------
 def register_page():
@@ -246,6 +262,9 @@ def render_main_pane():
     if st.session_state.selected_doc_id is None:
         st.title("WELCOME TO AI-Powered DocIQ")
         st.markdown("*select your document from the uploaded history to analyze it deeply*")
+        if st.session_state.delete_success:
+            st.error(st.session_state.delete_success)
+            st.session_state.delete_success = None
         return
 
     st.session_state.detail_error = None
@@ -259,13 +278,28 @@ def render_main_pane():
 
     if doc["status"] == "uploaded":
         st.text_area("Extracted text", value=doc["extracted_text"] or "", height=300, disabled=True)
-        st.button(
-            "🔍 Analyze",
-            key="analyze_button",
-            on_click=do_analyze,
-            args=(doc["id"],)
-        )
+        col1, col2 = st.columns(2)
 
+        with col1:
+            st.button(
+                "🔍 Analyze",
+                key="analyze_button",
+                on_click=do_analyze,
+                args=(doc["id"],)
+            )
+        with col2:
+            st.button(
+                "❌ Delete",
+                key="delete_button",
+                on_click=do_delete,
+                args=(doc["id"],)
+            )
+        
+        if st.session_state.delete_error:
+            st.error(st.session_state.delete_error)
+            st.session_state.delete_error = None
+            return
+        
         if st.session_state.analyze_error:
             st.error(st.session_state.analyze_error)
             st.session_state.analyze_error = None
@@ -273,15 +307,30 @@ def render_main_pane():
 
 
     elif doc["status"] == "extracted":
-        st.button(
-            "🔍 Re-Analyze",
-            key="analyze_button",
-            on_click=do_analyze,
-            args=(doc["id"],)
-        )
+        col1, col2 = st.columns(2)
+        with col1:
+            st.button(
+                "🔍 Re-Analyze",
+                key="analyze_button",
+                on_click=do_analyze,
+                args=(doc["id"],)
+            )
+
+        with col2:
+            st.button(
+                "❌ Delete",
+                key="delete_button",
+                on_click=do_delete,
+                args=(doc["id"],)
+            )
+            
         if st.session_state.analyze_error:
             st.error(st.session_state.analyze_error)
             st.session_state.analyze_error = None
+
+        if st.session_state.delete_error:
+            st.error(st.session_state.delete_error)
+            st.session_state.delete_error = None
 
         st.info(f"Detected type: **{doc['doc_type']}** (confidence: {doc['confidence']*100:.1f}%)")
         st.markdown("### Extracted Fields")

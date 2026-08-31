@@ -1,6 +1,6 @@
 from contextlib import asynccontextmanager
 from fastapi import FastAPI # type: ignore
-from app.api import upload, register_routes, login_routes, extract, history, document
+from app.api import upload, register_routes, login_routes, extract, history, document, delete
 
 
 @asynccontextmanager
@@ -18,3 +18,4 @@ app.include_router(register_routes.router)
 app.include_router(login_routes.router)
 app.include_router(history.router)
 app.include_router(document.router)
+app.include_router(delete.router)
