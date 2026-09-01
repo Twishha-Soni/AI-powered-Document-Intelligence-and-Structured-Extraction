@@ -1,0 +1,124 @@
+{
+  "document_type": "invoice",
+  "invoice_number": "52509059",
+  "invoice_details_number": null,
+  "order_number": null,
+  "billing_id": null,
+  "irn": null,
+  "ack_number": null,
+  "ack_date": null,
+  "issue_date": "25-10-2020",
+  "order_date": null,
+  "due_date": null,
+  "billing_period_start": null,
+  "billing_period_end": null,
+  "payment_terms": null,
+  "business_info": {
+    "name": "Walmart Supercenter",
+    "address": {
+      "street": "27520 Us Highway 98",
+      "city": "Daphne",
+      "state": "AL",
+      "postal_code": "36526",
+      "country": "United States"
+    },
+    "phone": "1-800-425-4278",
+    "email": "help@walmart.com",
+    "pan_number": null,
+    "gst_registration_number": null,
+    "tan_number": null
+  },
+  "client_info": {
+    "name": "Le Hai Khanh",
+    "billing_address": {
+      "street": "335/63/15A Hong Bang, Phuong 9, Quan 5",
+      "city": "Ho Chi Minh",
+      "state": null,
+      "postal_code": "700000",
+      "country": "Viet Nam"
+    },
+    "shipping_address": null,
+    "phone": null,
+    "email": null,
+    "gst_registration_number": null
+  },
+  "transporter_info": null,
+  "delivered_by": null,
+  "place_of_supply": null,
+  "place_of_delivery": null,
+  "reverse_charge_applicable": null,
+  "purchase_order_number": null,
+  "line_items": [
+    {
+      "description": "Presto Indoor Electric Smoker and 6-Quart Slow Cooker 06013",
+      "hsn_sac_code": null,
+      "quantity": 10.0,
+      "unit_price": 65.9,
+      "discount_amount": 0.0,
+      "discount_percentage": null,
+      "shipping_amount": 0.0,
+      "taxes": [],
+      "line_total": 659.0
+    },
+    {
+      "description": "Presto Aluminum 23-Quart Pressure Canner and Cooker",
+      "hsn_sac_code": null,
+      "quantity": 10.0,
+      "unit_price": 70.0,
+      "discount_amount": 0.0,
+      "discount_percentage": null,
+      "shipping_amount": 0.0,
+      "taxes": [],
+      "line_total": 700.0
+    },
+    {
+      "description": "DeWalt Atomic 4-1/2 in. Cordless 20 volt Compact Circular Saw Bare Tool 4500 rpm",
+      "hsn_sac_code": null,
+      "quantity": 10.0,
+      "unit_price": 109.99,
+      "discount_amount": 0.0,
+      "discount_percentage": null,
+      "shipping_amount": 0.0,
+      "taxes": [],
+      "line_total": 1099.9
+    },
+    {
+      "description": "BLACK+DECKER BSV2020G POWERSERIES Extreme Cordless Stick Vacuum Cleaner",
+      "hsn_sac_code": null,
+      "quantity": 10.0,
+      "unit_price": 139.0,
+      "discount_amount": 0.0,
+      "discount_percentage": null,
+      "shipping_amount": 0.0,
+      "taxes": [],
+      "line_total": 1390.0
+    },
+    {
+      "description": "Hoover Total Home Pet Bagless Upright Vacuum Cleaner, UH74100",
+      "hsn_sac_code": null,
+      "quantity": 5.0,
+      "unit_price": 119.0,
+      "discount_amount": 0.0,
+      "discount_percentage": null,
+      "shipping_amount": 0.0,
+      "taxes": [],
+      "line_total": 595.0
+    }
+  ],
+  "sub_total": 4443.9,
+  "discount_amount": 0.0,
+  "discount_percentage": null,
+  "shipping_amount": 0.0,
+  "taxes": [
+    {
+      "tax_type": "VAT",
+      "tax_rate": 0.0,
+      "tax_amount": 0.0
+    }
+  ],
+  "tax_amount": 0.0,
+  "total_amount": 4443.9,
+  "amount_paid": null,
+  "balance_due": null,
+  "currency": "USD"
+}

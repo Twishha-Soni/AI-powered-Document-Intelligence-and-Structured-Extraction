@@ -145,17 +145,17 @@ class InvoiceFields(ExtractedDocument):
             errors.append("Total amount cannot be negative")
 
         # 8. Basic GSTIN format check (Indian invoices) - soft check
-        def is_valid_gstin(gstin: str | None) -> bool:
-            if not gstin:
-                return True
-            # Very basic: 15 characters, starts with 2 digits
-            return bool(re.match(r"^\d{2}[A-Z]{5}\d{4}[A-Z]{1}[A-Z\d]{1}[Z]{1}[A-Z\d]{1}$", gstin.upper()))
+        # def is_valid_gstin(gstin: str | None) -> bool:
+        #     if not gstin:
+        #         return True
+        #     # Very basic: 15 characters, starts with 2 digits
+        #     return bool(re.match(r"^\d{2}[A-Z]{5}\d{4}[A-Z]{1}[A-Z\d]{1}[Z]{1}[A-Z\d]{1}$", gstin.upper()))
 
-        if self.business_info.gst_registration_number and not is_valid_gstin(self.business_info.gst_registration_number):
-            errors.append(f"Business GSTIN looks invalid: {self.business_info.gst_registration_number}")
+        # if self.business_info.gst_registration_number and not is_valid_gstin(self.business_info.gst_registration_number):
+        #     errors.append(f"Business GSTIN looks invalid: {self.business_info.gst_registration_number}")
 
-        if self.client_info.gst_registration_number and not is_valid_gstin(self.client_info.gst_registration_number):
-            errors.append(f"Client GSTIN looks invalid: {self.client_info.gst_registration_number}")
+        # if self.client_info.gst_registration_number and not is_valid_gstin(self.client_info.gst_registration_number):
+        #     errors.append(f"Client GSTIN looks invalid: {self.client_info.gst_registration_number}")
 
         # 9. Optional: Rough total consistency check (can be made soft later)
         # calculated = self.sub_total - self.discount_amount + self.shipping_amount + self.tax_amount
