@@ -1,0 +1,122 @@
+{
+  "document_type": "purchase_order",
+  "purchase_order_number": "8783362",
+  "purchase_order_date": "01-10-2021",
+  "revision_number": null,
+  "revision_date": null,
+  "quotation_number": null,
+  "quotation_date": null,
+  "requisition_number": null,
+  "contract_number": null,
+
+  "supplier_info": {
+    "name": "MHC Automation",
+    "address": {
+      "street": "12000 Portland Ave S",
+      "city": "Burnsville",
+      "state": "MN",
+      "postal_code": "55337",
+      "country": "USA"
+    },
+    "phone": "1234 567 891",
+    "email": null,
+    "contact_person": null,
+    "gst_registration_number": null,
+    "pan_number": null
+  },
+
+  "buyer_info": {
+    "name": "Healthcare Freight and Supply",
+    "address": {
+      "street": "PO Box 1028",
+      "city": "Riverside",
+      "state": "CA",
+      "postal_code": "92501",
+      "country": "USA"
+    },
+    "phone": "356-458-2268",
+    "email": null,
+    "contact_person": null,
+    "gst_registration_number": null,
+    "pan_number": null
+  },
+
+  "delivery_info": {
+    "delivery_address": {
+      "street": "12000 Portland Ave S",
+      "city": "Burnsville",
+      "state": "MN",
+      "postal_code": "55337",
+      "country": "USA"
+    },
+    "expected_delivery_date": null,
+    "shipping_method": "Free Ground",
+    "shipping_terms": null,
+    "transporter_name": null
+  },
+
+  "payment_terms": null,
+  "delivery_terms": null,
+  "currency": "USD",
+
+  "line_items": [
+    {
+      "description": "Safety Glasses - Clear",
+      "item_code": "03678",
+      "hsn_sac_code": null,
+      "quantity": 50,
+      "unit": "EA",
+      "unit_price": 7.0,
+      "discount_amount": 0,
+      "discount_percentage": null,
+      "taxes": [],
+      "line_total": 350.0,
+      "requested_delivery_date": null
+    },
+    {
+      "description": "Rubber Gloves - Large",
+      "item_code": "074993",
+      "hsn_sac_code": null,
+      "quantity": 25,
+      "unit": "EA",
+      "unit_price": 9.0,
+      "discount_amount": 0,
+      "discount_percentage": null,
+      "taxes": [],
+      "line_total": 225.0,
+      "requested_delivery_date": null
+    },
+    {
+      "description": "Potassium Iodide Pillows",
+      "item_code": "589374",
+      "hsn_sac_code": null,
+      "quantity": 1,
+      "unit": "CS",
+      "unit_price": 500.0,
+      "discount_amount": 0,
+      "discount_percentage": null,
+      "taxes": [],
+      "line_total": 500.0,
+      "requested_delivery_date": null
+    }
+  ],
+
+  "sub_total": 1075.0,
+  "discount_amount": 0,
+  "discount_percentage": null,
+  "shipping_amount": 0.0,
+
+  "taxes": [
+    {
+      "tax_type": "Sales Tax",
+      "tax_rate": 8.0,
+      "tax_amount": 86.0
+    }
+  ],
+
+  "tax_amount": 86.0,
+  "total_amount": 1161.0,
+
+  "notes": null,
+  "special_instructions": null
+}

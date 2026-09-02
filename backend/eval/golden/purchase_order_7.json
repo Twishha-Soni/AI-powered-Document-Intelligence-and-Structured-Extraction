@@ -1,0 +1,61 @@
+{
+  "document_type": "purchase_order",
+  "purchase_order_number": "PO-2026-00298",
+  "purchase_order_date": "02-09-2026",
+  "revision_number": null,
+  "revision_date": null,
+  "quotation_number": null,
+  "quotation_date": null,
+  "requisition_number": null,
+  "contract_number": null,
+  "supplier_info": {
+    "name": "Ahmedabad Stationery Mart Pvt. Ltd.",
+    "address": { "street": "204 Ashram Road", "city": "Ahmedabad", "state": "Gujarat", "postal_code": "380009", "country": null },
+    "phone": "+91 79123 45678",
+    "email": "orders@ahmstationery.test",
+    "contact_person": null,
+    "gst_registration_number": null,
+    "pan_number": null
+  },
+  "buyer_info": {
+    "name": "GEC Modasa - Stores Dept.",
+    "address": { "street": "Gandhinagar Rd", "city": "Modasa", "state": "Gujarat", "postal_code": "383315", "country": null },
+    "phone": "+91 91234 56789",
+    "email": "stores@gecmodasa.test",
+    "contact_person": "Twishha",
+    "gst_registration_number": null,
+    "pan_number": null
+  },
+  "delivery_info": {
+    "delivery_address": { "street": "Gandhinagar Rd", "city": "Modasa", "state": "Gujarat", "postal_code": "383315", "country": null },
+    "expected_delivery_date": "15-09-2026",
+    "shipping_method": null,
+    "shipping_terms": null,
+    "transporter_name": null
+  },
+  "payment_terms": "Net 45",
+  "delivery_terms": null,
+  "currency": "INR",
+  "line_items": [
+    { "description": "Correction Tape, 5mm x 6m (Pack of 6)", "item_code": null, "hsn_sac_code": null, "quantity": 25, "unit": "pack", "unit_price": 85.0, "discount_amount": 0, "discount_percentage": null, "taxes": [{"tax_type": "GST", "tax_rate": 12.0, "tax_amount": 255.0}], "line_total": 2125.0, "requested_delivery_date": null },
+    { "description": "Binder Clips, 32mm (Box of 12)", "item_code": null, "hsn_sac_code": null, "quantity": 18, "unit": "box", "unit_price": 60.0, "discount_amount": 0, "discount_percentage": null, "taxes": [{"tax_type": "GST", "tax_rate": 12.0, "tax_amount": 129.6}], "line_total": 1080.0, "requested_delivery_date": null },
+    { "description": "File Folders, A4 Manila (Pack of 25)", "item_code": null, "hsn_sac_code": null, "quantity": 10, "unit": "pack", "unit_price": 320.0, "discount_amount": 0, "discount_percentage": null, "taxes": [{"tax_type": "GST", "tax_rate": 12.0, "tax_amount": 384.0}], "line_total": 3200.0, "requested_delivery_date": null },
+    { "description": "Highlighters, Assorted Colors (Pack of 5)", "item_code": null, "hsn_sac_code": null, "quantity": 20, "unit": "pack", "unit_price": 110.0, "discount_amount": 0, "discount_percentage": null, "taxes": [{"tax_type": "GST", "tax_rate": 18.0, "tax_amount": 396.0}], "line_total": 2200.0, "requested_delivery_date": null },
+    { "description": "Printer Toner Cartridge, Black", "item_code": null, "hsn_sac_code": null, "quantity": 4, "unit": "pcs", "unit_price": 1450.0, "discount_amount": 0, "discount_percentage": null, "taxes": [{"tax_type": "GST", "tax_rate": 18.0, "tax_amount": 1044.0}], "line_total": 5800.0, "requested_delivery_date": null },
+    { "description": "Visitor Register Book, A4 200 pages", "item_code": null, "hsn_sac_code": null, "quantity": 6, "unit": "pcs", "unit_price": 150.0, "discount_amount": 0, "discount_percentage": null, "taxes": [{"tax_type": "GST", "tax_rate": 12.0, "tax_amount": 108.0}], "line_total": 900.0, "requested_delivery_date": null },
+    { "description": "Cutting Mat, A3 Self-Healing", "item_code": null, "hsn_sac_code": null, "quantity": 3, "unit": "pcs", "unit_price": 480.0, "discount_amount": 0, "discount_percentage": null, "taxes": [{"tax_type": "GST", "tax_rate": 18.0, "tax_amount": 259.2}], "line_total": 1440.0, "requested_delivery_date": null },
+    { "description": "Rubber Stamps, Custom Text", "item_code": null, "hsn_sac_code": null, "quantity": 2, "unit": "pcs", "unit_price": 350.0, "discount_amount": 0, "discount_percentage": null, "taxes": [{"tax_type": "GST", "tax_rate": 18.0, "tax_amount": 126.0}], "line_total": 700.0, "requested_delivery_date": null }
+  ],
+  "sub_total": 17445.0,
+  "discount_amount": 0,
+  "discount_percentage": null,
+  "shipping_amount": 0,
+  "taxes": [
+    { "tax_type": "GST", "tax_rate": 12.0, "tax_amount": 876.6 },
+    { "tax_type": "GST", "tax_rate": 18.0, "tax_amount": 1825.2 }
+  ],
+  "tax_amount": 2701.8,
+  "total_amount": 20146.8,
+  "notes": "This purchase order was generated with placeholder/sample values for internal pipeline testing purposes only. No actual procurement action should be taken based on this document.",
+  "special_instructions": null
+}

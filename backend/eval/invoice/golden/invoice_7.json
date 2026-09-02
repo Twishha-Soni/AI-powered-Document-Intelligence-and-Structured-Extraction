@@ -1,0 +1,96 @@
+{
+  "document_type": "invoice",
+  "invoice_number": "INV-005",
+  "invoice_details_number": null,
+  "order_number": null,
+  "billing_id": null,
+  "irn": null,
+  "ack_number": null,
+  "ack_date": null,
+  "issue_date": "22-06-2021",
+  "order_date": null,
+  "due_date": "27-06-2021",
+  "billing_period_start": null,
+  "billing_period_end": null,
+  "payment_terms": null,
+  "business_info": {
+    "name": "Ad4tech Material LLC",
+    "address": {
+      "street": "67h, Martin street, Alexander road",
+      "city": null,
+      "state": null,
+      "postal_code": "576832",
+      "country": null
+    },
+    "phone": "+123456789",
+    "email": "ad4example@gmail.com",
+    "pan_number": null,
+    "gst_registration_number": null,
+    "tan_number": null
+  },
+  "client_info": {
+    "name": "Green1 Materials LLC",
+    "billing_address": {
+      "street": "#34, Car street, City park",
+      "city": "Honk Kong",
+      "state": null,
+      "postal_code": null,
+      "country": null
+    },
+    "shipping_address": null,
+    "phone": null,
+    "email": null,
+    "gst_registration_number": null
+  },
+  "transporter_info": null,
+  "delivered_by": null,
+  "place_of_supply": null,
+  "place_of_delivery": null,
+  "reverse_charge_applicable": null,
+  "purchase_order_number": null,
+  "line_items": [
+    {
+      "description": "Desktop furniture",
+      "hsn_sac_code": null,
+      "quantity": 1.0,
+      "unit_price": 232.0,
+      "discount_amount": 0.0,
+      "discount_percentage": null,
+      "shipping_amount": 0.0,
+      "taxes": [],
+      "line_total": 232.0
+    },
+    {
+      "description": "Plumbing and electrical services",
+      "hsn_sac_code": null,
+      "quantity": 2.0,
+      "unit_price": 514.0,
+      "discount_amount": 0.0,
+      "discount_percentage": null,
+      "shipping_amount": 0.0,
+      "taxes": [],
+      "line_total": 1028.0
+    },
+    {
+      "description": "Water tank repair works",
+      "hsn_sac_code": null,
+      "quantity": 2.0,
+      "unit_price": 152.0,
+      "discount_amount": 0.0,
+      "discount_percentage": null,
+      "shipping_amount": 0.0,
+      "taxes": [],
+      "line_total": 304.0
+    }
+  ],
+  "sub_total": 1564.0,
+  "discount_amount": 0.0,
+  "discount_percentage": null,
+  "shipping_amount": 0.0,
+  "taxes": [],
+  "tax_amount": 0.0,
+  "total_amount": 1564.0,
+  "amount_paid": 232.0,
+  "balance_due": 1332.0,
+  "currency": "USD"
+}

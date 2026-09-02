@@ -1,0 +1,166 @@
+{
+  "document_type": "purchase_order",
+  "purchase_order_number": "PO00495",
+  "purchase_order_date": "26-04-2017",
+  "revision_number": null,
+  "revision_date": null,
+  "quotation_number": null,
+  "quotation_date": null,
+  "requisition_number": null,
+  "contract_number": null,
+
+  "supplier_info": {
+    "name": "Taylor Dickens",
+    "address": {
+      "street": "70 Bowman St.",
+      "city": "South Windsor",
+      "state": "Connecticut",
+      "postal_code": "06074",
+      "country": "USA"
+    },
+    "phone": "800-123-4567",
+    "email": "john@taylordickens.com",
+    "contact_person": null,
+    "gst_registration_number": null,
+    "pan_number": null
+  },
+
+  "buyer_info": {
+    "name": "PLANERGY",
+    "address": {
+      "street": "One Post Office Square, Suite 3600",
+      "city": "Boston",
+      "state": "Massachusetts",
+      "postal_code": "02109",
+      "country": "USA"
+    },
+    "phone": "800-123-4567",
+    "email": null,
+    "contact_person": "Patrick"
+  },
+
+  "delivery_info": {
+    "delivery_address": {
+      "street": "One Post Office Square, Suite 3600",
+      "city": "Boston",
+      "state": "Massachusetts",
+      "postal_code": "02109",
+      "country": "USA"
+    },
+    "expected_delivery_date": "28-04-2017",
+    "shipping_method": null,
+    "shipping_terms": null,
+    "transporter_name": null
+  },
+
+  "payment_terms": "30 Days",
+  "delivery_terms": null,
+  "currency": "USD",
+
+  "line_items": [
+    {
+      "description": "Nescafe Gold Blend Coffee 7oz",
+      "item_code": "QD2-00350",
+      "hsn_sac_code": null,
+      "quantity": 1.0,
+      "unit": null,
+      "unit_price": 34.99,
+      "discount_amount": 0.0,
+      "discount_percentage": null,
+      "taxes": [],
+      "line_total": 34.99,
+      "requested_delivery_date": null
+    },
+    {
+      "description": "Tettley Tea Round Tea Bags 440/Pk",
+      "item_code": "QD2-TET440",
+      "hsn_sac_code": null,
+      "quantity": 1.0,
+      "unit": null,
+      "unit_price": 20.49,
+      "discount_amount": 0.0,
+      "discount_percentage": null,
+      "taxes": [],
+      "line_total": 20.49,
+      "requested_delivery_date": null
+    },
+    {
+      "description": "Niceday Economy Lever Arch File A4 Black",
+      "item_code": "Q81-4857579",
+      "hsn_sac_code": null,
+      "quantity": 15.0,
+      "unit": null,
+      "unit_price": 1.90,
+      "discount_amount": 0.0,
+      "discount_percentage": null,
+      "taxes": [],
+      "line_total": 28.50,
+      "requested_delivery_date": null
+    },
+    {
+      "description": "3 Tier Letter Tray",
+      "item_code": "QD2-1523055",
+      "hsn_sac_code": null,
+      "quantity": 3.0,
+      "unit": null,
+      "unit_price": 23.89,
+      "discount_amount": 0.0,
+      "discount_percentage": null,
+      "taxes": [],
+      "line_total": 71.67,
+      "requested_delivery_date": null
+    },
+    {
+      "description": "Viking A4 Economy Copier",
+      "item_code": "QD2-9537",
+      "hsn_sac_code": null,
+      "quantity": 5.0,
+      "unit": null,
+      "unit_price": 3.59,
+      "discount_amount": 0.0,
+      "discount_percentage": null,
+      "taxes": [],
+      "line_total": 17.95,
+      "requested_delivery_date": null
+    },
+    {
+      "description": "Economy Manila Envelopes - 500",
+      "item_code": "QD2-2071074",
+      "hsn_sac_code": null,
+      "quantity": 2.0,
+      "unit": null,
+      "unit_price": 15.49,
+      "discount_amount": 0.0,
+      "discount_percentage": null,
+      "taxes": [],
+      "line_total": 30.98,
+      "requested_delivery_date": null
+    },
+    {
+      "description": "3 Tier Letter Tray",
+      "item_code": "QD2-1523055",
+      "hsn_sac_code": null,
+      "quantity": 1.0,
+      "unit": null,
+      "unit_price": 23.89,
+      "discount_amount": 0.0,
+      "discount_percentage": null,
+      "taxes": [],
+      "line_total": 23.89,
+      "requested_delivery_date": null
+    }
+  ],
+
+  "sub_total": 228.47,
+  "discount_amount": 0.0,
+  "discount_percentage": null,
+  "shipping_amount": 0.0,
+
+  "taxes": [],
+  "tax_amount": 0.0,
+
+  "total_amount": 228.47,
+
+  "notes": "Description ABC",
+  "special_instructions": null
+}

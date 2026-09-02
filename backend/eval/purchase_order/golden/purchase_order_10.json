@@ -1,0 +1,60 @@
+{
+  "document_type": "purchase_order",
+  "purchase_order_number": "PO-2026-00147",
+  "purchase_order_date": "01-09-2026",
+  "revision_number": null,
+  "revision_date": null,
+  "quotation_number": null,
+  "quotation_date": null,
+  "requisition_number": null,
+  "contract_number": null,
+  "supplier_info": {
+    "name": "Modasa Office Supplies Co.",
+    "address": { "street": "SH-7", "city": "Modasa", "state": "Gujarat", "postal_code": "383315", "country": null },
+    "phone": "+91 98765 43210",
+    "email": "sales@modasaoffice.test",
+    "contact_person": null,
+    "gst_registration_number": null,
+    "pan_number": null
+  },
+  "buyer_info": {
+    "name": "GEC Modasa - Stores Dept.",
+    "address": { "street": "Gandhinagar Rd", "city": "Modasa", "state": "Gujarat", "postal_code": "383315", "country": null },
+    "phone": "+91 91234 56789",
+    "email": "stores@gecmodasa.test",
+    "contact_person": "Twishha",
+    "gst_registration_number": null,
+    "pan_number": null
+  },
+  "delivery_info": {
+    "delivery_address": { "street": "Gandhinagar Rd", "city": "Modasa", "state": "Gujarat", "postal_code": "383315", "country": null },
+    "expected_delivery_date": "10-09-2026",
+    "shipping_method": null,
+    "shipping_terms": null,
+    "transporter_name": null
+  },
+  "payment_terms": "Net 30",
+  "delivery_terms": null,
+  "currency": "INR",
+  "line_items": [
+    { "description": "A4 Copier Paper, 75 GSM (Ream of 500)", "item_code": null, "hsn_sac_code": null, "quantity": 20, "unit": "ream", "unit_price": 260.0, "discount_amount": 0, "discount_percentage": null, "taxes": [{"tax_type": "GST", "tax_rate": 12.0, "tax_amount": 624.0}], "line_total": 5200.0, "requested_delivery_date": null },
+    { "description": "Ball Point Pens, Blue (Box of 50)", "item_code": null, "hsn_sac_code": null, "quantity": 10, "unit": "box", "unit_price": 180.0, "discount_amount": 0, "discount_percentage": null, "taxes": [{"tax_type": "GST", "tax_rate": 12.0, "tax_amount": 216.0}], "line_total": 1800.0, "requested_delivery_date": null },
+    { "description": "Stapler, Heavy Duty", "item_code": null, "hsn_sac_code": null, "quantity": 6, "unit": "pcs", "unit_price": 220.0, "discount_amount": 0, "discount_percentage": null, "taxes": [{"tax_type": "GST", "tax_rate": 18.0, "tax_amount": 237.6}], "line_total": 1320.0, "requested_delivery_date": null },
+    { "description": "Sticky Notes 3x3 in, Pack of 12", "item_code": null, "hsn_sac_code": null, "quantity": 15, "unit": "pack", "unit_price": 95.0, "discount_amount": 0, "discount_percentage": null, "taxes": [{"tax_type": "GST", "tax_rate": 12.0, "tax_amount": 171.0}], "line_total": 1425.0, "requested_delivery_date": null },
+    { "description": "Lever Arch Files, A4 (Box of 10)", "item_code": null, "hsn_sac_code": null, "quantity": 8, "unit": "box", "unit_price": 640.0, "discount_amount": 0, "discount_percentage": null, "taxes": [{"tax_type": "GST", "tax_rate": 12.0, "tax_amount": 614.4}], "line_total": 5120.0, "requested_delivery_date": null },
+    { "description": "Whiteboard Markers, Assorted (Pack of 8)", "item_code": null, "hsn_sac_code": null, "quantity": 12, "unit": "pack", "unit_price": 150.0, "discount_amount": 0, "discount_percentage": null, "taxes": [{"tax_type": "GST", "tax_rate": 18.0, "tax_amount": 324.0}], "line_total": 1800.0, "requested_delivery_date": null },
+    { "description": "Desk Organizer Tray, 3-Tier", "item_code": null, "hsn_sac_code": null, "quantity": 5, "unit": "pcs", "unit_price": 410.0, "discount_amount": 0, "discount_percentage": null, "taxes": [{"tax_type": "GST", "tax_rate": 18.0, "tax_amount": 369.0}], "line_total": 2050.0, "requested_delivery_date": null }
+  ],
+  "sub_total": 18715.0,
+  "discount_amount": 0,
+  "discount_percentage": null,
+  "shipping_amount": 0,
+  "taxes": [
+    { "tax_type": "GST", "tax_rate": 12.0, "tax_amount": 1625.4 },
+    { "tax_type": "GST", "tax_rate": 18.0, "tax_amount": 930.6 }
+  ],
+  "tax_amount": 2556.0,
+  "total_amount": 21271.0,
+  "notes": "This purchase order was generated with placeholder/sample values for internal pipeline testing purposes only. No actual procurement action should be taken based on this document.",
+  "special_instructions": null
+}

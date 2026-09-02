@@ -1,0 +1,210 @@
+{
+  "document_type": "purchase_order",
+  "purchase_order_number": "2024/PO-12",
+  "purchase_order_date": "27-04-2024",
+  "revision_number": null,
+  "revision_date": null,
+  "quotation_number": null,
+  "quotation_date": null,
+  "requisition_number": null,
+  "contract_number": null,
+
+  "supplier_info": {
+    "name": "SM traders",
+    "address": {
+      "street": "43, Kamar Street",
+      "city": "Chennai",
+      "state": null,
+      "postal_code": "600453",
+      "country": "India"
+    },
+    "phone": "+91-9345678123",
+    "email": "purchase-sm@gmail.com",
+    "contact_person": null,
+    "gst_registration_number": "33AACPEVPS1Z4",
+    "pan_number": null
+  },
+
+  "buyer_info": {
+    "name": "Thendral Supermarket",
+    "address": {
+      "street": "No 23/2, SBI Colony, Rajavendra Nagar",
+      "city": "Chennai",
+      "state": "Tamil Nadu",
+      "postal_code": "600124",
+      "country": "India"
+    },
+    "phone": "+91-7689254563",
+    "email": "purchase@thendral.com",
+    "contact_person": null,
+    "gst_registration_number": "33A?SPF6?ZV",
+    "pan_number": null
+  },
+
+  "delivery_info": {
+    "delivery_address": {
+      "street": "No 23/2, SBI Colony, Rajavendra Nagar",
+      "city": "Chennai",
+      "state": "Tamil Nadu",
+      "postal_code": "600124",
+      "country": "India"
+    },
+    "expected_delivery_date": null,
+    "shipping_method": "Road by truck",
+    "shipping_terms": "On destination",
+    "transporter_name": null
+  },
+
+  "payment_terms": null,
+  "delivery_terms": "Free shipping to destination",
+  "currency": "INR",
+
+  "line_items": [
+    {
+      "description": "Surf Excel 5 kg",
+      "item_code": "105",
+      "hsn_sac_code": "34013011",
+      "quantity": 20,
+      "unit": "nos",
+      "unit_price": 600.0,
+      "discount_amount": 0,
+      "discount_percentage": null,
+      "taxes": [
+        {
+          "tax_type": "GST",
+          "tax_rate": 5.0,
+          "tax_amount": 600.0
+        }
+      ],
+      "line_total": 12600.0,
+      "requested_delivery_date": null
+    },
+    {
+      "description": "Rin 1 kg",
+      "item_code": "109",
+      "hsn_sac_code": "34013011",
+      "quantity": 25,
+      "unit": "nos",
+      "unit_price": 85.0,
+      "discount_amount": 0,
+      "discount_percentage": null,
+      "taxes": [
+        {
+          "tax_type": "GST",
+          "tax_rate": 5.0,
+          "tax_amount": 106.25
+        }
+      ],
+      "line_total": 2231.0,
+      "requested_delivery_date": null
+    },
+    {
+      "description": "Hamam soap 150 g",
+      "item_code": "115",
+      "hsn_sac_code": "34011100",
+      "quantity": 25,
+      "unit": "nos",
+      "unit_price": 60.0,
+      "discount_amount": 0,
+      "discount_percentage": null,
+      "taxes": [
+        {
+          "tax_type": "GST",
+          "tax_rate": 5.0,
+          "tax_amount": 75.0
+        }
+      ],
+      "line_total": 1575.0,
+      "requested_delivery_date": null
+    },
+    {
+      "description": "Lux Soap 150 g",
+      "item_code": "120",
+      "hsn_sac_code": "34011100",
+      "quantity": 30,
+      "unit": "nos",
+      "unit_price": 53.0,
+      "discount_amount": 0,
+      "discount_percentage": null,
+      "taxes": [
+        {
+          "tax_type": "GST",
+          "tax_rate": 5.0,
+          "tax_amount": 79.5
+        }
+      ],
+      "line_total": 443.0,
+      "requested_delivery_date": null
+    },
+    {
+      "description": "Dove soap 125 g",
+      "item_code": "125",
+      "hsn_sac_code": "34011100",
+      "quantity": 25,
+      "unit": "nos",
+      "unit_price": 75.0,
+      "discount_amount": 0,
+      "discount_percentage": null,
+      "taxes": [
+        {
+          "tax_type": "GST",
+          "tax_rate": 5.0,
+          "tax_amount": 93.75
+        }
+      ],
+      "line_total": 1968.0,
+      "requested_delivery_date": null
+    },
+    {
+      "description": "Vim bar 200 g",
+      "item_code": "129",
+      "hsn_sac_code": "34011100",
+      "quantity": 20,
+      "unit": "nos",
+      "unit_price": 15.0,
+      "discount_amount": 0,
+      "discount_percentage": null,
+      "taxes": [
+        {
+          "tax_type": "GST",
+          "tax_rate": 5.0,
+          "tax_amount": 15.0
+        }
+      ],
+      "line_total": 315.0,
+      "requested_delivery_date": null
+    },
+    {
+      "description": "Pepsodent 150 g",
+      "item_code": "131",
+      "hsn_sac_code": "33061020",
+      "quantity": 30,
+      "unit": "nos",
+      "unit_price": 85.0,
+      "discount_amount": 0,
+      "discount_percentage": null,
+      "taxes": [
+        {
+          "tax_type": "GST",
+          "tax_rate": 18.0,
+          "tax_amount": 459.0
+        }
+      ],
+      "line_total": 3009.0,
+      "requested_delivery_date": null
+    }
+  ],
+
+  "sub_total": 22141.0,
+  "discount_amount": 141.0,
+  "discount_percentage": null,
+  "shipping_amount": 0,
+
+  "taxes": [],
+  "tax_amount": 0,
+
+  "total_amount": 22000.0,
+
+  "notes": "Terms and conditions: Please refer to the purchase order terms and conditions. Mark any communications to purchase-team@thendral.com.",
+  "special_instructions": "Authorized signatory required."
+}

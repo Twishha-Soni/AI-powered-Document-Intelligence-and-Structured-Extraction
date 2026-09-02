@@ -1,0 +1,93 @@
+{
+  "document_type": "resume",
+  "full_name": "Sophia Brown",
+  "headline": "Amazon Picker",
+  "summary": "As an Amazon Picker, involves stocking shelves, maintaining the warehouse area, and ensuring that they are clean and making containers, packing, items, complete order receipts, and adhering to verbal instructions.",
+  "contact_info": {
+    "email": "supportamazon@amazon.com",
+    "phone": "326 455 999",
+    "location": "Los Angeles",
+    "linkedin_url": null,
+    "github_url": null,
+    "portfolio_url": "www.sophiasbrown.com",
+    "other_links": []
+  },
+  "work_experience": [
+    {
+      "job_title": "Amazon Picker",
+      "company_name": "Maple Leaf Clothing",
+      "location": "Toronto, ON",
+      "start_date": "Apr 2020",
+      "end_date": "Ongoing",
+      "is_current": true,
+      "description": null,
+      "responsibilities": [
+        "Responsible for selecting and packaging products for customer orders, and using technology to scan and sort items.",
+        "Responsible for operating machinery like forklifts, pallet jacks, and other approved industrial trucks.",
+        "Responsible for following safety protocols and reporting hazards to management.",
+        "Responsible for locating merchandise to meet and picking tickets.",
+        "Responsible for putting away the deliveries in the appropriate areas.",
+        "Responsible for stacking deliveries in the vehicles when necessary.",
+        "Created pallets with orders and properly positioned them to the loading docks.",
+        "Collaborated with team members to optimize picking routes, reducing time spent on each order and enhancing overall operational efficiency within the warehouse."
+      ]
+    },
+    {
+      "job_title": "Amazon Picker",
+      "company_name": "Toronto Retail Industries",
+      "location": "Denver, CO",
+      "start_date": "Apr 2015",
+      "end_date": "Apr 2020",
+      "is_current": false,
+      "description": null,
+      "responsibilities": [
+        "Ensured the accurate management of inventory, including stock checks.",
+        "Used forklifts or other machinery to safely pick orders from shelves.",
+        "Managed incoming and outgoing stock orders from the tracked efficiently.",
+        "Received and prepared inventory for delivery.",
+        "Used technology like smartphones and handheld devices to sort, scan, and prepare orders."
+      ]
+    }
+  ],
+  "education": [
+    {
+      "degree": "Associate of Applied Science",
+      "field_of_study": "Logistics",
+      "institution_name": "City College",
+      "location": "Toronto, ON",
+      "start_date": "Aug 2017",
+      "end_date": "Apr 2020",
+      "gpa": null,
+      "honors": []
+    }
+  ],
+  "skills": [
+    {
+      "category": "Computer Skills",
+      "skills": [
+        "Basic Computer Skills",
+        "Understanding of Shipping and Receiving Processes",
+        "Attention to Detail",
+        "Physical Stamina",
+        "Time Management"
+      ]
+    }
+  ],
+  "projects": [],
+  "certifications": [],
+  "languages": [
+    {
+      "name": "English",
+      "proficiency": null
+    },
+    {
+      "name": "Mandarin",
+      "proficiency": null
+    },
+    {
+      "name": "German",
+      "proficiency": null
+    }
+  ],
+  "total_years_experience": null
+}

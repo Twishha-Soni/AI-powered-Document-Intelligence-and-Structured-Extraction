@@ -1,0 +1,11 @@
+{
+  "total_documents": 9,
+  "extraction_success_rate": "88.89%",
+  "invalid_output_rate": "11.11%",
+  "validation_failure_rate": "0.0%",
+  "average_processing_time_seconds": "98.51 sec",
+  "field_level_accuracy": "81.93%",
+  "exact_match_accuracy": "0.0%",
+  "error_rate_overall": "11.11%",
+  "documents_with_field_comparison": 8
+}

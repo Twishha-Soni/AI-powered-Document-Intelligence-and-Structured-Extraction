@@ -1,0 +1,73 @@
+{
+  "document_type": "resume",
+  "full_name": "Sebastian Bennett",
+  "headline": "Professional Accountant",
+  "summary": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+  "contact_info": {
+    "email": "hello@reallygreatsite.com",
+    "phone": "+123-456-7890",
+    "location": "123 Anywhere St., Any City",
+    "linkedin_url": null,
+    "github_url": null,
+    "portfolio_url": null,
+    "other_links": []
+  },
+  "work_experience": [
+    {
+      "job_title": "Senior Accountant",
+      "company_name": "Salford & Co.",
+      "location": null,
+      "start_date": "2033",
+      "end_date": "2035",
+      "is_current": false,
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+      "responsibilities": []
+    },
+    {
+      "job_title": "Financial Accountant",
+      "company_name": "Salford & Co.",
+      "location": null,
+      "start_date": "2030",
+      "end_date": "2033",
+      "is_current": false,
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+      "responsibilities": []
+    }
+  ],
+  "education": [
+    {
+      "degree": "Senior Accountant",
+      "field_of_study": null,
+      "institution_name": "Borcelle University",
+      "location": null,
+      "start_date": "2026",
+      "end_date": "2030",
+      "gpa": null,
+      "honors": []
+    },
+    {
+      "degree": "Senior Accountant",
+      "field_of_study": null,
+      "institution_name": "Borcelle University",
+      "location": null,
+      "start_date": "2023",
+      "end_date": "2026",
+      "gpa": null,
+      "honors": []
+    }
+  ],
+  "skills": [
+    {
+      "category": "Accounting",
+      "skills": [
+        "Auditing",
+        "Financial Accounting",
+        "Financial Reporting"
+      ]
+    }
+  ],
+  "projects": [],
+  "certifications": [],
+  "languages": [],
+  "total_years_experience": null
+}

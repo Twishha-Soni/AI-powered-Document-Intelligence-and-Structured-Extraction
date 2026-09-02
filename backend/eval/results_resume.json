@@ -1,0 +1,192 @@
+[
+  {
+    "filename": "resume_1.png",
+    "expected_type": "resume",
+    "processing_time_seconds": 118.62,
+    "extraction_succeeded": true,
+    "output_valid": true,
+    "classification_correct": true,
+    "validation_passed": true,
+    "field_results": {
+      "document_type": true,
+      "full_name": true,
+      "contact_info": true,
+      "work_experience": true,
+      "education": true,
+      "skills": false,
+      "projects": true,
+      "certifications": true,
+      "languages": true
+    },
+    "error": null
+  },
+  {
+    "filename": "resume_10.pdf",
+    "expected_type": "resume",
+    "processing_time_seconds": 4.79,
+    "extraction_succeeded": true,
+    "output_valid": true,
+    "classification_correct": true,
+    "validation_passed": true,
+    "field_results": {
+      "document_type": true,
+      "full_name": true,
+      "headline": false,
+      "summary": true,
+      "contact_info": true,
+      "work_experience": true,
+      "education": true,
+      "skills": false,
+      "projects": true,
+      "certifications": true,
+      "languages": true
+    },
+    "error": null
+  },
+  {
+    "filename": "resume_2.jpeg",
+    "expected_type": "resume",
+    "processing_time_seconds": 102.28,
+    "extraction_succeeded": false,
+    "output_valid": false,
+    "classification_correct": false,
+    "validation_passed": false,
+    "field_results": {},
+    "error": "Validation failed: \n\nAt least one contact method (email, phone, LinkedIn, GitHub, or portfolio) is required"
+  },
+  {
+    "filename": "resume_3.jpeg",
+    "expected_type": "resume",
+    "processing_time_seconds": 54.17,
+    "extraction_succeeded": true,
+    "output_valid": true,
+    "classification_correct": true,
+    "validation_passed": true,
+    "field_results": {
+      "document_type": true,
+      "full_name": false,
+      "summary": false,
+      "contact_info": true,
+      "work_experience": true,
+      "education": true,
+      "skills": false,
+      "projects": true,
+      "certifications": true,
+      "languages": true
+    },
+    "error": null
+  },
+  {
+    "filename": "resume_4.png",
+    "expected_type": "resume",
+    "processing_time_seconds": 201.3,
+    "extraction_succeeded": true,
+    "output_valid": true,
+    "classification_correct": true,
+    "validation_passed": true,
+    "field_results": {
+      "document_type": true,
+      "full_name": true,
+      "headline": true,
+      "summary": true,
+      "contact_info": true,
+      "work_experience": false,
+      "education": true,
+      "skills": false,
+      "projects": true,
+      "certifications": true,
+      "languages": true
+    },
+    "error": null
+  },
+  {
+    "filename": "resume_6.webp",
+    "expected_type": "resume",
+    "processing_time_seconds": 111.73,
+    "extraction_succeeded": true,
+    "output_valid": true,
+    "classification_correct": true,
+    "validation_passed": true,
+    "field_results": {
+      "document_type": true,
+      "full_name": true,
+      "headline": false,
+      "summary": true,
+      "contact_info": true,
+      "work_experience": true,
+      "education": true,
+      "skills": false,
+      "projects": true,
+      "certifications": true,
+      "languages": true
+    },
+    "error": null
+  },
+  {
+    "filename": "resume_7.jpeg",
+    "expected_type": "resume",
+    "processing_time_seconds": 182.27,
+    "extraction_succeeded": true,
+    "output_valid": true,
+    "classification_correct": true,
+    "validation_passed": true,
+    "field_results": {
+      "document_type": true,
+      "full_name": true,
+      "contact_info": true,
+      "work_experience": true,
+      "education": true,
+      "skills": false,
+      "projects": true,
+      "certifications": true,
+      "languages": true
+    },
+    "error": null
+  },
+  {
+    "filename": "resume_8.webp",
+    "expected_type": "resume",
+    "processing_time_seconds": 105.76,
+    "extraction_succeeded": true,
+    "output_valid": true,
+    "classification_correct": true,
+    "validation_passed": true,
+    "field_results": {
+      "document_type": true,
+      "full_name": false,
+      "headline": true,
+      "summary": true,
+      "contact_info": true,
+      "work_experience": true,
+      "education": true,
+      "skills": false,
+      "projects": true,
+      "certifications": true,
+      "languages": true
+    },
+    "error": null
+  },
+  {
+    "filename": "resume_9.docx",
+    "expected_type": "resume",
+    "processing_time_seconds": 5.71,
+    "extraction_succeeded": true,
+    "output_valid": true,
+    "classification_correct": true,
+    "validation_passed": true,
+    "field_results": {
+      "document_type": true,
+      "full_name": true,
+      "headline": false,
+      "summary": true,
+      "contact_info": true,
+      "work_experience": true,
+      "education": true,
+      "skills": false,
+      "projects": true,
+      "certifications": true,
+      "languages": true
+    },
+    "error": null
+  }
+]

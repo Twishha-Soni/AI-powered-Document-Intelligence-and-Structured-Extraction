@@ -1,0 +1,92 @@
+{
+  "document_type": "resume",
+  "full_name": "Jordan Lee",
+  "headline": "Warehouse Associate",
+  "summary": "Diligent and hardworking Warehouse Associate with experience in fast-paced distribution environments. Proven ability to handle physical labor, operate machinery, and ensure smooth warehouse operations. Seeking to contribute my skills to a dynamic team at Amazon.",
+  "contact_info": {
+    "email": "jordan.lee@gmail.com",
+    "phone": "(555) 234-5678",
+    "location": "United States, Seattle, WA",
+    "linkedin_url": null,
+    "github_url": null,
+    "portfolio_url": null,
+    "other_links": []
+  },
+  "work_experience": [
+    {
+      "job_title": "Warehouse Associate",
+      "company_name": "Amazon Fulfillment Center",
+      "location": "Seattle, WA",
+      "start_date": "2021",
+      "end_date": "Now",
+      "is_current": true,
+      "description": null,
+      "responsibilities": [
+        "Sort and pack customer orders to ensure timely and accurate deliveries.",
+        "Operate forklifts and pallet jacks to transport products across the warehouse.",
+        "Maintain a clean and organized workspace while adhering to safety protocols.",
+        "Monitor inventory levels and assist in stock replenishment when necessary.",
+        "Collaborate with team members to meet daily productivity targets."
+      ]
+    },
+    {
+      "job_title": "Warehouse Worker",
+      "company_name": "UPS Supply Chain Solutions",
+      "location": "Seattle, WA",
+      "start_date": "2019",
+      "end_date": "2021",
+      "is_current": false,
+      "description": null,
+      "responsibilities": [
+        "Assisted with loading and unloading shipments, ensuring accurate counts and proper storage.",
+        "Utilized barcode scanners to track inventory and assist in stocktaking.",
+        "Performed quality control checks on incoming products, reporting any discrepancies.",
+        "Helped maintain a safe working environment by following established protocols."
+      ]
+    }
+  ],
+  "education": [
+    {
+      "degree": "High School Diploma",
+      "field_of_study": null,
+      "institution_name": "Seattle High School",
+      "location": null,
+      "start_date": null,
+      "end_date": "June 2018",
+      "gpa": null,
+      "honors": []
+    }
+  ],
+  "skills": [
+    {
+      "category": "Warehouse Skills",
+      "skills": [
+        "Forklift and pallet jack operation",
+        "Inventory management and organization",
+        "Order fulfillment and shipping",
+        "Safety and compliance adherence",
+        "Physical stamina and strength",
+        "Team collaboration and communication"
+      ]
+    }
+  ],
+  "projects": [],
+  "certifications": [
+    {
+      "name": "Amazon's Health & Safety Certification",
+      "issuing_organization": "Amazon",
+      "issue_date": "April 2022",
+      "expiration_date": null,
+      "credential_id": null
+    },
+    {
+      "name": "Forklift Operator Certification",
+      "issuing_organization": "OSHA",
+      "issue_date": "March 2021",
+      "expiration_date": null,
+      "credential_id": null
+    }
+  ],
+  "languages": [],
+  "total_years_experience": null
+}

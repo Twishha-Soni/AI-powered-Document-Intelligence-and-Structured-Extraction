@@ -1,0 +1,139 @@
+{
+  "document_type": "purchase_order",
+  "purchase_order_number": "PO-2026-00417",
+  "purchase_order_date": "01-09-2026",
+  "revision_number": null,
+  "revision_date": null,
+  "quotation_number": null,
+  "quotation_date": null,
+  "requisition_number": null,
+  "contract_number": "PIPE-TEST-0417",
+  "supplier_info": {
+    "name": "Skyline Components Ltd.",
+    "address": {
+      "street": "44 Sector 18, Industrial Park",
+      "city": "Pune",
+      "state": "Maharashtra",
+      "postal_code": "411057",
+      "country": null
+    },
+    "phone": "+91 20 6500 8899",
+    "email": "raghav.mehta@skylinecomp.example",
+    "contact_person": "Raghav Mehta",
+    "gst_registration_number": null,
+    "pan_number": null
+  },
+  "buyer_info": {
+    "name": "Nimbus Retail Solutions Pvt. Ltd.",
+    "address": {
+      "street": "221 Industrial Estate Road",
+      "city": "Ahmedabad",
+      "state": "Gujarat",
+      "postal_code": "380015",
+      "country": null
+    },
+    "phone": "+91 79 4000 1234",
+    "email": null,
+    "contact_person": null,
+    "gst_registration_number": "24AAACN1234F1Z5",
+    "pan_number": null
+  },
+  "delivery_info": {
+    "delivery_address": {
+      "street": "Warehouse 3, Logistics Park",
+      "city": "Ahmedabad",
+      "state": "Gujarat",
+      "postal_code": "380026",
+      "country": null
+    },
+    "expected_delivery_date": "15-09-2026",
+    "shipping_method": "Road Freight",
+    "shipping_terms": null,
+    "transporter_name": null
+  },
+  "payment_terms": "Net 30",
+  "delivery_terms": null,
+  "currency": "INR",
+  "line_items": [
+    {
+      "description": "24-inch LED Monitor, 75Hz",
+      "item_code": "MON-24-075",
+      "hsn_sac_code": null,
+      "quantity": 20,
+      "unit": null,
+      "unit_price": 8250.00,
+      "discount_amount": 0,
+      "discount_percentage": null,
+      "taxes": [],
+      "line_total": 165000.00,
+      "requested_delivery_date": null
+    },
+    {
+      "description": "Wireless Optical Mouse",
+      "item_code": "MSE-WL-002",
+      "hsn_sac_code": null,
+      "quantity": 50,
+      "unit": null,
+      "unit_price": 450.00,
+      "discount_amount": 0,
+      "discount_percentage": null,
+      "taxes": [],
+      "line_total": 22500.00,
+      "requested_delivery_date": null
+    },
+    {
+      "description": "USB-C Docking Station",
+      "item_code": "DOCK-UC-100",
+      "hsn_sac_code": null,
+      "quantity": 15,
+      "unit": null,
+      "unit_price": 3600.00,
+      "discount_amount": 0,
+      "discount_percentage": null,
+      "taxes": [],
+      "line_total": 54000.00,
+      "requested_delivery_date": null
+    },
+    {
+      "description": "Mechanical Keyboard, TKL",
+      "item_code": "KBD-TKL-088",
+      "hsn_sac_code": null,
+      "quantity": 20,
+      "unit": null,
+      "unit_price": 2150.00,
+      "discount_amount": 0,
+      "discount_percentage": null,
+      "taxes": [],
+      "line_total": 43000.00,
+      "requested_delivery_date": null
+    },
+    {
+      "description": "HDMI Cable 2m (Pack of 5)",
+      "item_code": "CBL-HDMI-05",
+      "hsn_sac_code": null,
+      "quantity": 10,
+      "unit": null,
+      "unit_price": 900.00,
+      "discount_amount": 0,
+      "discount_percentage": null,
+      "taxes": [],
+      "line_total": 9000.00,
+      "requested_delivery_date": null
+    }
+  ],
+  "sub_total": 293500.00,
+  "discount_amount": 0,
+  "discount_percentage": null,
+  "shipping_amount": 2500.00,
+  "taxes": [
+    {
+      "tax_type": "GST",
+      "tax_rate": 18.0,
+      "tax_amount": 52830.00
+    }
+  ],
+  "tax_amount": 52830.00,
+  "total_amount": 348830.00,
+  "notes": "This purchase order contains sample/placeholder data generated for pipeline testing purposes only. It does not represent a real transaction. Goods should be delivered with a copy of this PO. Please reference the PO number PO-2026-00417 on the invoice.",
+  "special_instructions": null
+}

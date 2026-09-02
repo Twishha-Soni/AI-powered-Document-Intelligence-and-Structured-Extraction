@@ -1,0 +1,120 @@
+{
+  "document_type": "resume",
+  "full_name": "Karl Pilkington",
+  "headline": null,
+  "summary": null,
+  "contact_info": {
+    "email": "karl.pilkington@gmail.com",
+    "phone": "+1 949 111-1111",
+    "location": "Newport Beach, California",
+    "linkedin_url": "LinkedIn",
+    "github_url": "GitHub",
+    "portfolio_url": null,
+    "other_links": []
+  },
+  "work_experience": [
+    {
+      "job_title": "Lead Software Engineer",
+      "company_name": "Patik",
+      "location": "San Jose, CA",
+      "start_date": "Jan 2022",
+      "end_date": "Present",
+      "is_current": true,
+      "description": "Patik is one of California's leading digitized healthcare companies.",
+      "responsibilities": [
+        "Increased server response time by 30% by implementing machine learning (Python).",
+        "Led performance improvements of customer-facing application, decreased response times by 60% (Java).",
+        "Re-worked the application's API to conform to REST patterns, enforced TDD with 90% coverage (Java).",
+        "Contributed to code reviews, mentoring junior developers, and fostering a culture of high standards."
+      ]
+    },
+    {
+      "job_title": "Software engineer",
+      "company_name": "LifeEnhance",
+      "location": "Chicago, IL",
+      "start_date": "Sep 2020",
+      "end_date": "Jan 2022",
+      "is_current": false,
+      "description": "LifeEnhance is a medical software startup.",
+      "responsibilities": [
+        "Achieved automation of a framework in C# .NET for automated testing on the company's medical platform. Assemblies and services using WCF and multithreading which communicates between components like 3D volume viewers, image reconstructions etc. (C#).",
+        "Led the migration of legacy codebase to a modern microservices architecture, reducing application downtime by 90% and improving scalability."
+      ]
+    },
+    {
+      "job_title": "Junior Software engineer",
+      "company_name": "Mr Fred's",
+      "location": "Manchester, UK",
+      "start_date": "Oct 2017",
+      "end_date": "July 2020",
+      "is_current": false,
+      "description": "Laundry services app.",
+      "responsibilities": [
+        "Developed automated testing scripts using JUnit, which improved test coverage by 25% (Java).",
+        "Worked on integrating third-party APIs and libraries to extend product functionality and enhance UX.",
+        "Collaborated with senior engineers to troubleshoot and debug complex software issues, ensuring smooth product launches."
+      ]
+    }
+  ],
+  "education": [
+    {
+      "degree": "MS",
+      "field_of_study": "Industrial Engineering",
+      "institution_name": "Georgia Institute of Technology",
+      "location": null,
+      "start_date": "Sep 2013",
+      "end_date": "Jun 2015",
+      "gpa": null,
+      "honors": [
+        "Earned a distinction (top 10%)"
+      ]
+    },
+    {
+      "degree": "BS",
+      "field_of_study": "Mechanical Engineering",
+      "institution_name": "University of Manchester",
+      "location": "UK",
+      "start_date": "Sep 2009",
+      "end_date": "Jun 2013",
+      "gpa": "2:1",
+      "honors": []
+    }
+  ],
+  "skills": [
+    {
+      "category": "Programming Languages",
+      "skills": [
+        "C#",
+        "Python",
+        "Java",
+        "JavaScript"
+      ]
+    },
+    {
+      "category": "Frameworks and Technologies",
+      "skills": [
+        ".NET",
+        "WCF",
+        "JUnit",
+        "REST APIs",
+        "Microservices",
+        "Machine Learning"
+      ]
+    },
+    {
+      "category": "Software Engineering",
+      "skills": [
+        "Test-Driven Development",
+        "Automated Testing",
+        "Multithreading",
+        "API Integration",
+        "Code Review",
+        "Debugging"
+      ]
+    }
+  ],
+  "projects": [],
+  "certifications": [],
+  "languages": [],
+  "total_years_experience": null
+}

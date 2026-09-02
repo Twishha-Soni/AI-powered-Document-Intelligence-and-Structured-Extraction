@@ -1,0 +1,104 @@
+{
+  "document_type": "purchase_order",
+  "purchase_order_number": "PO-001",
+  "purchase_order_date": "22-06-2021",
+  "revision_number": null,
+  "revision_date": null,
+  "quotation_number": null,
+  "quotation_date": null,
+  "requisition_number": null,
+  "contract_number": null,
+
+  "supplier_info": {
+    "name": "Green1 Materials LLC",
+    "address": {
+      "street": "34, Oak street",
+      "city": "City park",
+      "state": null,
+      "postal_code": null,
+      "country": "Hong Kong"
+    },
+    "phone": null,
+    "email": null,
+    "contact_person": null,
+    "gst_registration_number": null,
+    "pan_number": null
+  },
+
+  "buyer_info": {
+    "name": "Ad4tech Material LLC",
+    "address": {
+      "street": "67h, Martin street, Alexander road",
+      "city": null,
+      "state": null,
+      "postal_code": "567832",
+      "country": null
+    },
+    "phone": "+123456789",
+    "email": "ad4example@gmail.com",
+    "contact_person": null,
+    "gst_registration_number": null,
+    "pan_number": null
+  },
+
+  "delivery_info": null,
+
+  "payment_terms": null,
+  "delivery_terms": null,
+  "currency": "USD",
+
+  "line_items": [
+    {
+      "description": "Desktop furniture",
+      "item_code": null,
+      "hsn_sac_code": null,
+      "quantity": 1,
+      "unit": null,
+      "unit_price": 232.0,
+      "discount_amount": 0,
+      "discount_percentage": null,
+      "taxes": [],
+      "line_total": 232.0,
+      "requested_delivery_date": null
+    },
+    {
+      "description": "Plumbing and electrical services",
+      "item_code": null,
+      "hsn_sac_code": null,
+      "quantity": 2,
+      "unit": null,
+      "unit_price": 514.0,
+      "discount_amount": 0,
+      "discount_percentage": null,
+      "taxes": [],
+      "line_total": 1028.0,
+      "requested_delivery_date": null
+    },
+    {
+      "description": "Water tank repair works",
+      "item_code": null,
+      "hsn_sac_code": null,
+      "quantity": 2,
+      "unit": null,
+      "unit_price": 152.0,
+      "discount_amount": 0,
+      "discount_percentage": null,
+      "taxes": [],
+      "line_total": 304.0,
+      "requested_delivery_date": null
+    }
+  ],
+
+  "sub_total": 1564.0,
+  "discount_amount": 0,
+  "discount_percentage": null,
+  "shipping_amount": 0,
+
+  "taxes": [],
+  "tax_amount": 0,
+
+  "total_amount": 1564.0,
+
+  "notes": "Payment instructions: Pay Cheque to John Doe. Paid on Jun 22, 2021: $232.00. Balance Due: $1,332.00.",
+  "special_instructions": null
+}

@@ -1,0 +1,112 @@
+{
+  "document_type": "resume",
+  "full_name": "Curtis Falcone",
+  "headline": "Master's Degree Student in Clinical Psychology",
+  "summary": "Psychology student, enthusiastic about applying solid analytical, interpersonal, and research skills to an entry-level position in the field. Eager to contribute to a team and gain practical experience in industrial psychology.",
+  "contact_info": {
+    "email": "example@example.com",
+    "phone": "555-555-5555",
+    "location": "Cumming, Georgia 30040",
+    "linkedin_url": null,
+    "github_url": null,
+    "portfolio_url": null,
+    "other_links": []
+  },
+  "work_experience": [
+    {
+      "job_title": "Research & Evaluation Volunteer",
+      "company_name": "Passion for Life, Inc.",
+      "location": "Alpharetta, GA",
+      "start_date": "2022",
+      "end_date": "Present",
+      "is_current": true,
+      "description": null,
+      "responsibilities": [
+        "Assist in conducting surveys and interviews, contributing to analyzing data in a research project.",
+        "Support the organization in organizing mental health awareness events, leading to a 30% increase in attendance.",
+        "Collaborate with a team to create educational materials on mental health topics for distribution in the community."
+      ]
+    },
+    {
+      "job_title": "Front Desk Receptionist Intern",
+      "company_name": "Beyond Today Counseling Center",
+      "location": "Cumming",
+      "start_date": "02/2023",
+      "end_date": "02/2025",
+      "is_current": false,
+      "description": null,
+      "responsibilities": [
+        "Manage a high-volume phone system, handling 50+ calls daily and providing professional assistance to callers.",
+        "Greet and direct visitors, ensuring a welcoming and efficient experience.",
+        "Assist with administrative tasks, such as data entry, appointment scheduling and record keeping, maintaining a high level of accuracy."
+      ]
+    },
+    {
+      "job_title": "Club Secretary",
+      "company_name": "Psychology Club, North Georgia University",
+      "location": null,
+      "start_date": "2022",
+      "end_date": "Present",
+      "is_current": true,
+      "description": null,
+      "responsibilities": [
+        "Serve as the club secretary, overseeing meeting minutes and communication materials, ensuring the smooth operation of the club.",
+        "Coordinate and participate in events related to psychology awareness, including panel discussions and workshops."
+      ]
+    },
+    {
+      "job_title": "Representative for Psychology Department",
+      "company_name": "Student Government Association, North Georgia University",
+      "location": null,
+      "start_date": "2021",
+      "end_date": "2022",
+      "is_current": false,
+      "description": null,
+      "responsibilities": [
+        "Acted as a representative for the psychology department, advocating for student concerns and participating in decision-making processes.",
+        "Organized and led community service initiatives, contributing to a 15% increase in student involvement."
+      ]
+    }
+  ],
+  "education": [
+    {
+      "degree": "Master of Science",
+      "field_of_study": "Clinical Psychology",
+      "institution_name": "University of North Georgia",
+      "location": "Dahlonega, GA",
+      "start_date": null,
+      "end_date": "05/2027",
+      "gpa": null,
+      "honors": []
+    },
+    {
+      "degree": "Bachelor of Arts",
+      "field_of_study": "Psychology",
+      "institution_name": "University of North Georgia",
+      "location": "Dahlonega, GA",
+      "start_date": null,
+      "end_date": "05/2024",
+      "gpa": null,
+      "honors": [
+        "Relevant Coursework: research methods in psychology, abnormal psychology and statistics for psychology"
+      ]
+    }
+  ],
+  "skills": [
+    {
+      "category": "Administrative",
+      "skills": [
+        "Microsoft Office",
+        "Document management",
+        "Reception area maintenance",
+        "Scheduling appointments",
+        "Calendar management",
+        "Visitor assistance"
+      ]
+    }
+  ],
+  "projects": [],
+  "certifications": [],
+  "languages": [],
+  "total_years_experience": null
+}

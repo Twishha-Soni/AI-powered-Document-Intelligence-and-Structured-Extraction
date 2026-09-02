@@ -1,0 +1,139 @@
+{
+  "document_type": "purchase_order",
+  "purchase_order_number": "PO-2026-00892",
+  "purchase_order_date": "02-09-2026",
+  "revision_number": null,
+  "revision_date": null,
+  "quotation_number": null,
+  "quotation_date": null,
+  "requisition_number": null,
+  "contract_number": "PIPE-TEST-0892",
+  "supplier_info": {
+    "name": "Orion Steel & Alloys Pvt. Ltd.",
+    "address": {
+      "street": "12 Bhosari Industrial Estate",
+      "city": "Pune",
+      "state": "Maharashtra",
+      "postal_code": "411026",
+      "country": null
+    },
+    "phone": "+91 20 3388 4477",
+    "email": "neha.kulkarni@orionsteel.example",
+    "contact_person": "Neha Kulkarni",
+    "gst_registration_number": null,
+    "pan_number": null
+  },
+  "buyer_info": {
+    "name": "Vertex Manufacturing Co.",
+    "address": {
+      "street": "88 MIDC Industrial Area",
+      "city": "Pune",
+      "state": "Maharashtra",
+      "postal_code": "411019",
+      "country": null
+    },
+    "phone": "+91 20 2711 9900",
+    "email": null,
+    "contact_person": null,
+    "gst_registration_number": "27AABCV5678K1Z9",
+    "pan_number": null
+  },
+  "delivery_info": {
+    "delivery_address": {
+      "street": "Plant 2, MIDC Industrial Area",
+      "city": "Pune",
+      "state": "Maharashtra",
+      "postal_code": "411019",
+      "country": null
+    },
+    "expected_delivery_date": "20-09-2026",
+    "shipping_method": "Rail Freight",
+    "shipping_terms": null,
+    "transporter_name": null
+  },
+  "payment_terms": "Net 45",
+  "delivery_terms": null,
+  "currency": "INR",
+  "line_items": [
+    {
+      "description": "MS Steel Angle 40x40x5mm (6m)",
+      "item_code": "STL-ANG-4005",
+      "hsn_sac_code": null,
+      "quantity": 200,
+      "unit": null,
+      "unit_price": 620.00,
+      "discount_amount": 0,
+      "discount_percentage": null,
+      "taxes": [],
+      "line_total": 124000.00,
+      "requested_delivery_date": null
+    },
+    {
+      "description": "Galvanized Steel Sheet 2mm",
+      "item_code": "STL-SHT-GV02",
+      "hsn_sac_code": null,
+      "quantity": 80,
+      "unit": null,
+      "unit_price": 1850.00,
+      "discount_amount": 0,
+      "discount_percentage": null,
+      "taxes": [],
+      "line_total": 148000.00,
+      "requested_delivery_date": null
+    },
+    {
+      "description": "Hex Bolt M12x50 (Box of 100)",
+      "item_code": "HW-BOLT-1250",
+      "hsn_sac_code": null,
+      "quantity": 40,
+      "unit": null,
+      "unit_price": 780.00,
+      "discount_amount": 0,
+      "discount_percentage": null,
+      "taxes": [],
+      "line_total": 31200.00,
+      "requested_delivery_date": null
+    },
+    {
+      "description": "Industrial Welding Rod 3.15mm (Kg)",
+      "item_code": "WLD-ROD-315",
+      "hsn_sac_code": null,
+      "quantity": 150,
+      "unit": null,
+      "unit_price": 210.00,
+      "discount_amount": 0,
+      "discount_percentage": null,
+      "taxes": [],
+      "line_total": 31500.00,
+      "requested_delivery_date": null
+    },
+    {
+      "description": "Safety Gloves, Leather (Pair)",
+      "item_code": "SFY-GLV-LTH",
+      "hsn_sac_code": null,
+      "quantity": 100,
+      "unit": null,
+      "unit_price": 145.00,
+      "discount_amount": 0,
+      "discount_percentage": null,
+      "taxes": [],
+      "line_total": 14500.00,
+      "requested_delivery_date": null
+    }
+  ],
+  "sub_total": 349200.00,
+  "discount_amount": 0,
+  "discount_percentage": null,
+  "shipping_amount": 4200.00,
+  "taxes": [
+    {
+      "tax_type": "GST",
+      "tax_rate": 18.0,
+      "tax_amount": 62856.00
+    }
+  ],
+  "tax_amount": 62856.00,
+  "total_amount": 416256.00,
+  "notes": "This purchase order contains sample/placeholder data generated for pipeline testing purposes only. It does not represent a real transaction. Goods should be delivered with a copy of this PO. Please reference the PO number PO-2026-00892 on the invoice.",
+  "special_instructions": null
+}

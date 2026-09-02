@@ -1,0 +1,183 @@
+{
+  "document_type": "purchase_order",
+  "purchase_order_number": "PO/2025/05/021",
+  "purchase_order_date": "20-05-2025",
+  "revision_number": null,
+  "revision_date": null,
+  "quotation_number": null,
+  "quotation_date": null,
+  "requisition_number": null,
+  "contract_number": null,
+
+  "supplier_info": {
+    "name": "Smart Supplies Co.",
+    "address": {
+      "street": "No. 45, Industrial Area, Peenya 2nd Stage",
+      "city": "Bangalore",
+      "state": "Karnataka",
+      "postal_code": "560058",
+      "country": "India"
+    },
+    "phone": "+91 80 2836 1234",
+    "email": "sales@smartsupplies.com",
+    "contact_person": "Ravi Kumar",
+    "gst_registration_number": "29XYZAB9876C1ZP",
+    "pan_number": null
+  },
+
+  "buyer_info": {
+    "name": "TechNova Solutions Pvt. Ltd.",
+    "address": {
+      "street": "123 Innovation Drive",
+      "city": "Bangalore",
+      "state": "Karnataka",
+      "postal_code": "560102",
+      "country": "India"
+    },
+    "phone": "+91 80 1234 5678",
+    "email": "procurement@technovasolutions.com",
+    "contact_person": null,
+    "gst_registration_number": "29ABCDE1234F1Z5",
+    "pan_number": null
+  },
+
+  "delivery_info": {
+    "delivery_address": {
+      "street": "123 Innovation Drive",
+      "city": "Bangalore",
+      "state": "Karnataka",
+      "postal_code": "560102",
+      "country": "India"
+    },
+    "expected_delivery_date": "05-06-2025",
+    "shipping_method": null,
+    "shipping_terms": null,
+    "transporter_name": null
+  },
+
+  "payment_terms": "Net 30 Days",
+  "delivery_terms": null,
+  "currency": "INR",
+
+  "line_items": [
+    {
+      "description": "Dell Latitude 5440 Laptop (i5, 16GB RAM, 512GB SSD, Win 11)",
+      "item_code": null,
+      "hsn_sac_code": "84713010",
+      "quantity": 5,
+      "unit": "Nos",
+      "unit_price": 65000.0,
+      "discount_amount": 0,
+      "discount_percentage": null,
+      "taxes": [
+        {
+          "tax_type": "GST",
+          "tax_rate": 18.0,
+          "tax_amount": 58500.0
+        }
+      ],
+      "line_total": 325000.0,
+      "requested_delivery_date": null
+    },
+    {
+      "description": "HP 24\" Full HD Monitor",
+      "item_code": null,
+      "hsn_sac_code": "85285200",
+      "quantity": 5,
+      "unit": "Nos",
+      "unit_price": 10000.0,
+      "discount_amount": 0,
+      "discount_percentage": null,
+      "taxes": [
+        {
+          "tax_type": "GST",
+          "tax_rate": 18.0,
+          "tax_amount": 9000.0
+        }
+      ],
+      "line_total": 50000.0,
+      "requested_delivery_date": null
+    },
+    {
+      "description": "Logitech MK270 Wireless Keyboard & Mouse Combo",
+      "item_code": null,
+      "hsn_sac_code": "84716060",
+      "quantity": 5,
+      "unit": "Nos",
+      "unit_price": 1800.0,
+      "discount_amount": 0,
+      "discount_percentage": null,
+      "taxes": [
+        {
+          "tax_type": "GST",
+          "tax_rate": 18.0,
+          "tax_amount": 1620.0
+        }
+      ],
+      "line_total": 9000.0,
+      "requested_delivery_date": null
+    },
+    {
+      "description": "TP-Link Archer AX10 Wi-Fi Router",
+      "item_code": null,
+      "hsn_sac_code": "85176290",
+      "quantity": 2,
+      "unit": "Nos",
+      "unit_price": 3200.0,
+      "discount_amount": 0,
+      "discount_percentage": null,
+      "taxes": [
+        {
+          "tax_type": "GST",
+          "tax_rate": 18.0,
+          "tax_amount": 1152.0
+        }
+      ],
+      "line_total": 6400.0,
+      "requested_delivery_date": null
+    },
+    {
+      "description": "Seagate 1TB External HDD",
+      "item_code": null,
+      "hsn_sac_code": "84717050",
+      "quantity": 2,
+      "unit": "Nos",
+      "unit_price": 4500.0,
+      "discount_amount": 0,
+      "discount_percentage": null,
+      "taxes": [
+        {
+          "tax_type": "GST",
+          "tax_rate": 18.0,
+          "tax_amount": 1620.0
+        }
+      ],
+      "line_total": 9000.0,
+      "requested_delivery_date": null
+    }
+  ],
+
+  "sub_total": 399400.0,
+  "discount_amount": 0,
+  "discount_percentage": null,
+  "shipping_amount": 0,
+
+  "taxes": [
+    {
+      "tax_type": "CGST",
+      "tax_rate": 9.0,
+      "tax_amount": 35946.0
+    },
+    {
+      "tax_type": "SGST",
+      "tax_rate": 9.0,
+      "tax_amount": 35946.0
+    }
+  ],
+
+  "tax_amount": 71892.0,
+  "total_amount": 471292.0,
+
+  "notes": "This order is placed for testing our projects pipeline.",
+  "special_instructions": null
+}

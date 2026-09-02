@@ -1,0 +1,131 @@
+{
+  "document_type": "resume",
+  "full_name": "Sahil Gaba",
+  "headline": null,
+  "summary": null,
+  "contact_info": {
+    "email": "xxx@gmail.com",
+    "phone": "XXX-XXX-XXX",
+    "location": null,
+    "linkedin_url": null,
+    "github_url": null,
+    "portfolio_url": null,
+    "other_links": [
+      "gaba26"
+    ]
+  },
+  "work_experience": [
+    {
+      "job_title": "Software Engineer",
+      "company_name": "Amazon",
+      "location": "Seattle, WA",
+      "start_date": "Jul 2019",
+      "end_date": "Present",
+      "is_current": true,
+      "description": "Amazon's choice recommendations for incomplete missions.",
+      "responsibilities": [
+        "Ideated and developed a new strategy to recommend Amazon's Choice items related to customer's incomplete missions.",
+        "Led technical architecture discussions with Amazon's Choice and Amazon API teams and designed user experience with Amazon Gateway team.",
+        "Built a data pipeline with Amazon Redshift and Amazon EFS to use offline data, thereby limiting traffic for Amazon's Choice service and eliminating scalability issues.",
+        "Implemented a recommendation feature in Java using topics and incomplete missions of customers to improve recommendations on Amazon.",
+        "Built an extensive filters module to remove Adult topics from final dataset.",
+        "Ideated and developed a new algorithm using Collaborative Filtering to improve coverage of complementary recommendations for 500 million products on Amazon.",
+        "Created a data pipeline using Amazon EFS, Amazon Distributed Data Service and Amazon Distributed Job Service to create fresh dataset at regular intervals.",
+        "Implemented multiprocessing and LRU cache in Python to solve scalability challenges.",
+        "Conducted A/B tests and used Bayesian inference to launch the feature on Amazon.",
+        "Performed stress test on the service after artificially creating black hole effect. Black Hole Effect occurs when unhealthy host gets disproportionate share of requests because Load Balancer is unaware due to least connections algorithm.",
+        "Alleviated the impact of black hole effect by adding time delay to error responses.",
+        "Experiments altogether generated more than $X million incremental revenue for Amazon and played a pivotal role in achieving annual team goal."
+      ]
+    },
+    {
+      "job_title": "Software Engineer",
+      "company_name": "Fintech Corporation",
+      "location": "Chicago, IL",
+      "start_date": "Jan 2017",
+      "end_date": "Jun 2019",
+      "is_current": false,
+      "description": null,
+      "responsibilities": [
+        "Implemented API for custom order management and execution.",
+        "Developed and tested regional solutions tailored for stock exchanges of Americas."
+      ]
+    }
+  ],
+  "education": [
+    {
+      "degree": "M.S.",
+      "field_of_study": "Mechanical Engineering",
+      "institution_name": "University of Illinois – Urbana Champaign (UIUC)",
+      "location": "Urbana-Champaign, IL",
+      "start_date": null,
+      "end_date": "Dec 2016",
+      "gpa": "3.74/4",
+      "honors": []
+    },
+    {
+      "degree": "B.S.",
+      "field_of_study": "Mechanical Engineering",
+      "institution_name": "Indian Institute of Technology Delhi (IITD)",
+      "location": "New Delhi, India",
+      "start_date": null,
+      "end_date": "May 2014",
+      "gpa": "8.98/10",
+      "honors": []
+    }
+  ],
+  "skills": [
+    {
+      "category": "Back End Development",
+      "skills": [
+        "Java",
+        "Python",
+        "Spring",
+        "Express",
+        "NodeJS"
+      ]
+    },
+    {
+      "category": "Data Pipelines",
+      "skills": [
+        "Amazon Redshift",
+        "Amazon EFS",
+        "S3"
+      ]
+    },
+    {
+      "category": "Miscellaneous",
+      "skills": [
+        "Amazon AWS",
+        "Recommendations",
+        "Collaborative Filtering",
+        "Machine Learning",
+        "MongoDB"
+      ]
+    },
+    {
+      "category": "Front End Development",
+      "skills": [
+        "ReactJS",
+        "Redux",
+        "JavaScript",
+        "Bootstrap",
+        "Materialize",
+        "HTML",
+        "CSS"
+      ]
+    },
+    {
+      "category": "Soft Skills",
+      "skills": [
+        "Team player",
+        "Bias for action",
+        "Deliver results"
+      ]
+    }
+  ],
+  "projects": [],
+  "certifications": [],
+  "languages": [],
+  "total_years_experience": null
+}

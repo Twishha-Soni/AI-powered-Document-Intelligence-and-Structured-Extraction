@@ -1,0 +1,77 @@
+{
+  "document_type": "resume",
+  "full_name": "Billie Dolloff",
+  "headline": null,
+  "summary": "Enthusiastic and customer-focused individual seeking a Customer Service Representative position. Highly skilled in communication, problem-solving, and handling customer inquiries efficiently. Eager to contribute to a dynamic team and develop strong client relationships.",
+  "contact_info": {
+    "email": "Billie.dolloff@mail.com",
+    "phone": "+44 (0)20 7666 8555",
+    "location": "New York, USA",
+    "linkedin_url": null,
+    "github_url": null,
+    "portfolio_url": null,
+    "other_links": []
+  },
+  "work_experience": [],
+  "education": [
+    {
+      "degree": "Bachelor's Degree",
+      "field_of_study": "Business Administration",
+      "institution_name": "Columbia University, NY",
+      "location": "NY",
+      "start_date": null,
+      "end_date": "2024",
+      "gpa": null,
+      "honors": []
+    }
+  ],
+  "skills": [
+    {
+      "category": "Skills",
+      "skills": [
+        "Microsoft Office",
+        "Active listening",
+        "Problem-solving",
+        "Time management",
+        "Multitasking"
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "name": "University Call Center Volunteer",
+      "description": "Volunteered at a university call center, assisting students with inquiries about university services and providing support.",
+      "technologies": [],
+      "url": null,
+      "start_date": "Jan 2023",
+      "end_date": "May 2023"
+    }
+  ],
+  "certifications": [
+    {
+      "name": "Customer Service Fundamentals",
+      "issuing_organization": "Coursera",
+      "issue_date": "2024",
+      "expiration_date": null,
+      "credential_id": null
+    },
+    {
+      "name": "Google Digital Marketing Certification",
+      "issuing_organization": "Google",
+      "issue_date": "2023",
+      "expiration_date": null,
+      "credential_id": null
+    }
+  ],
+  "languages": [
+    {
+      "name": "Spanish",
+      "proficiency": "C2"
+    },
+    {
+      "name": "French",
+      "proficiency": "A1"
+    }
+  ],
+  "total_years_experience": null
+}

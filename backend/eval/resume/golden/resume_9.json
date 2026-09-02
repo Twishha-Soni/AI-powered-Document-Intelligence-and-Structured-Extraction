@@ -1,0 +1,154 @@
+{
+  "document_type": "resume",
+  "full_name": "Twishha Soni",
+  "headline": null,
+  "summary": "Recent graduate in Computer Engineering, building at the intersection of backend engineering and AI — with hands-on experience in REST API design (Java, Spring Boot) and end-to-end AI systems (RAG pipelines, LLM integration, MCP). During a 7-month internship, helped a school staff team adopt AI tools into their daily workflows — translating real operational problems into practical no-code and low-code solutions, and communicating technical ideas clearly to non-technical people. Strong at figuring out where AI actually fits a use case and getting others comfortable using it. Open to internship opportunities in backend or AI engineering.",
+  "contact_info": {
+    "email": "twishhasoni7@gmail.com",
+    "phone": "+91 75748 36438",
+    "location": null,
+    "linkedin_url": "https://www.linkedin.com/in/TwishhaSoni",
+    "github_url": "https://github.com/Twishha-Soni",
+    "portfolio_url": null,
+    "other_links": [
+      "https://leetcode.com/u/Twishha/",
+      "https://twishhasoni.medium.com/",
+      "https://youtube.com/@TwishhaSoni"
+    ]
+  },
+  "work_experience": [
+    {
+      "job_title": "Intern — AI & Tools Application",
+      "company_name": "Podar International School",
+      "location": "Modasa, Gujarat (On-site)",
+      "start_date": "Sep 2025",
+      "end_date": "Mar 2026",
+      "is_current": false,
+      "description": null,
+      "responsibilities": [
+        "Joined during a subject teacher crisis mid-semester — built a Notion workspace with Notion AI letting each teacher track syllabus progress independently, giving coordinators and the principal real-time visibility to measure and recover learning loss.",
+        "Introduced Claude AI to teaching staff and ran hands-on sessions for creating daily worksheets and classroom materials, cutting prep time and freeing teachers to focus on students.",
+        "Built a Google Apps Script attendance tracker inside Google Sheets using Claude for Excel for the school’s English Leveling-Up Program, giving staff a clean, no-fuss tool to manage attendance across different student level groups."
+      ]
+    }
+  ],
+  "education": [
+    {
+      "degree": "Bachelor of Engineering",
+      "field_of_study": "Computer Engineering",
+      "institution_name": "Gujarat Technological University (GTU)",
+      "location": "Modasa, Gujarat",
+      "start_date": "Sept 2022",
+      "end_date": "May 2026",
+      "gpa": "7.9",
+      "honors": []
+    }
+  ],
+  "skills": [
+    {
+      "category": "Languages",
+      "skills": [
+        "Python",
+        "Java (17)",
+        "SQL"
+      ]
+    },
+    {
+      "category": "AI & ML",
+      "skills": [
+        "RAG pipelines",
+        "Prompt Engineering",
+        "LLM integration (Gemini, Claude)",
+        "sentence-transformers",
+        "ChromaDB",
+        "FastMCP (Model Context Protocol)"
+      ]
+    },
+    {
+      "category": "Frameworks & Libraries",
+      "skills": [
+        "FastAPI",
+        "Spring Boot",
+        "Spring Security",
+        "Spring Data JPA",
+        "Hibernate",
+        "JWT"
+      ]
+    },
+    {
+      "category": "Databases",
+      "skills": [
+        "MySQL",
+        "ChromaDB",
+        "H2"
+      ]
+    },
+    {
+      "category": "Tools & Platforms",
+      "skills": [
+        "Git",
+        "Postman",
+        "Docker",
+        "Linux",
+        "Maven",
+        "IntelliJ IDEA",
+        "Google Apps Script",
+        "Notion"
+      ]
+    },
+    {
+      "category": "Concepts",
+      "skills": [
+        "REST API Design",
+        "JWT Auth",
+        "Role-Based Access Control",
+        "OOP",
+        "SOLID Principles",
+        "ManyToMany JPA",
+        "Global Exception Handling",
+        "Retrieval-Augmented Generation (RAG)",
+        "Model Context Protocol (MCP)"
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "name": "ReelMind — Semantic Instagram Personally Saved Reel Search",
+      "description": "Solving a real gap in Instagram’s UX: saved reels have no native search, and third-party applications are web based — built a Telegram bot instead, turning your phone’s chat interface into a zero-friction reel search assistant available wherever Instagram is. Indexes reels from Instagram URLs or bulk JSON export: downloads video via yt-dlp, uploads to Gemini File API for multimodal analysis, generates rich semantic summaries, embeds them with sentence-transformers, and stores in ChromaDB — full RAG pipeline over video content. Distributes API load across two Gemini models and is containerized and deployed on AWS EC2 via Docker and Docker Compose with persistent ChromaDB storage on a separate EBS volume.",
+      "technologies": [
+        "Python",
+        "python-telegram-bot",
+        "yt-dlp",
+        "Gemini (multimodal)",
+        "ChromaDB",
+        "sentence-transformers",
+        "FastAPI",
+        "Docker"
+      ],
+      "url": "https://github.com/Twishha-Soni/ReelMind-Agent.git",
+      "start_date": null,
+      "end_date": null
+    },
+    {
+      "name": "Doc-IQ — Document Intelligence Assistant",
+      "description": "Built a full-stack RAG application where users upload .pdf/.txt documents and ask natural-language questions — the system retrieves the most semantically relevant chunks and returns cited, grounded answers via Google Gemini, eliminating manual document searching. Deployed on AWS EC2 with systemd managing automatic startup on reboot and an EBS gp3 volume at /data for persistent ChromaDB storage. Exposed two interfaces — a FastAPI web server with a zero-dependency HTML/CSS/JS frontend, and a FastMCP server for direct Claude Desktop integration.",
+      "technologies": [
+        "Python",
+        "FastAPI",
+        "ChromaDB",
+        "sentence-transformers",
+        "Google Gemini",
+        "FastMCP",
+        "AWS EC2",
+        "Ubuntu",
+        "systemd"
+      ],
+      "url": "https://github.com/Twishha-Soni/Doc-IQ",
+      "start_date": null,
+      "end_date": null
+    }
+  ],
+  "certifications": [],
+  "languages": [],
+  "total_years_experience": null
+}
