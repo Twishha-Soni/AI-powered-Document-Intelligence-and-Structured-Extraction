@@ -58,6 +58,10 @@ class Language(BaseModel):
     name: str = Field(description="Language name, e.g. 'Spanish'.")
     proficiency: str | None = Field(default=None, description="Stated proficiency level, e.g. 'Native', 'Fluent', 'Intermediate', if given.")
 
+class Skills(BaseModel):
+    category: str
+    skills: list
+
 
 class ResumeFields(ExtractedDocument):
     document_type: Literal["resume"] = "resume"
@@ -69,7 +73,7 @@ class ResumeFields(ExtractedDocument):
 
     work_experience: list[WorkExperience] = Field(default_factory=list, description="Work history, ideally in the order listed on the resume (usually reverse-chronological).")
     education: list[Education] = Field(default_factory=list, description="Educational background.")
-    skills: list[dict] = Field(default_factory=list, description="skills as listed on the resume (technical and non-technical), keep grouped even if not grouped on resume, for better representation rather than mixed.")
+    skills: list[Skills] = Field(default_factory=list, description="skills as listed on the resume (technical and non-technical), keep grouped as given in the resume and even if not grouped on resume, for better representation group it.")
     projects: list[Project] = Field(default_factory=list, description="Personal/academic/professional projects listed separately from work experience.")
     certifications: list[Certification] = Field(default_factory=list, description="Certifications and licenses.")
     languages: list[Language] = Field(default_factory=list, description="Spoken/written languages, if listed.")

@@ -89,7 +89,7 @@ def extract_fields(doc_text: str) -> dict:
         extraction_chain = prompt | _llm.with_structured_output(schema)
         extracted = extraction_chain.invoke({"document_text": doc_text})
         logger.info("Fields extracted successfully and validated successfully.")
-    except OutputParserException as e:
+    except (OutputParserException, ValidationError) as e:
         logger.error(f'Validation Failed for {classification.doc_type}: {e}', exc_info=True)
     
         if isinstance(e.__cause__, ValidationError):

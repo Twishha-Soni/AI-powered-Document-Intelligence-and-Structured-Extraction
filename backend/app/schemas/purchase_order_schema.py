@@ -326,19 +326,19 @@ class PurchaseOrderFields(ExtractedDocument):
             errors.append("Total amount cannot be negative")
 
         # 8. Basic GSTIN format check (optional but useful for Indian POs)
-        def is_valid_gstin(gstin: str | None) -> bool:
-            if not gstin:
-                return True
-            return bool(re.match(
-                r"^\d{2}[A-Z]{5}\d{4}[A-Z]{1}[A-Z\d]{1}[Z]{1}[A-Z\d]{1}$",
-                gstin.upper()
-            ))
+        # def is_valid_gstin(gstin: str | None) -> bool:
+        #     if not gstin:
+        #         return True
+        #     return bool(re.match(
+        #         r"^\d{2}[A-Z]{5}\d{4}[A-Z]{1}[A-Z\d]{1}[Z]{1}[A-Z\d]{1}$",
+        #         gstin.upper()
+        #     ))
 
-        if self.supplier_info.gst_registration_number and not is_valid_gstin(self.supplier_info.gst_registration_number):
-            errors.append(f"Supplier GSTIN looks invalid: {self.supplier_info.gst_registration_number}")
+        # if self.supplier_info.gst_registration_number and not is_valid_gstin(self.supplier_info.gst_registration_number):
+        #     errors.append(f"Supplier GSTIN looks invalid: {self.supplier_info.gst_registration_number}")
 
-        if self.buyer_info.gst_registration_number and not is_valid_gstin(self.buyer_info.gst_registration_number):
-            errors.append(f"Buyer GSTIN looks invalid: {self.buyer_info.gst_registration_number}")
+        # if self.buyer_info.gst_registration_number and not is_valid_gstin(self.buyer_info.gst_registration_number):
+        #     errors.append(f"Buyer GSTIN looks invalid: {self.buyer_info.gst_registration_number}")
 
         if errors:
             raise ValueError(" | ".join(errors))
